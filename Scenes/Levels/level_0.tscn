@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://f2j27jx1fvnr"]
+
+[ext_resource type="Texture2D" uid="uid://cjgl37oucbdwe" path="res://Assets/Backdrops/traincanada.png" id="1_ng3i3"]
+[ext_resource type="Texture2D" uid="uid://cet4njij6wfoj" path="res://Assets/train-attendant.jpg" id="2_wk3mw"]
+[ext_resource type="Script" path="res://Scripts/button.gd" id="3_y30gs"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ng3i3")
+
+[node name="Person" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 784.0
+offset_top = 293.0
+offset_right = 1517.0
+offset_bottom = 1317.0
+scale = Vector2(0.319944, 0.319944)
+texture = ExtResource("2_wk3mw")
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 690.0
+offset_top = 319.0
+offset_right = 770.0
+offset_bottom = 350.0
+text = "CLICK ME
+"
+script = ExtResource("3_y30gs")
+
+[connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_pressed"]

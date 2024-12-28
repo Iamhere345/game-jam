@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://v4k8cbre5aln"]
+
+[ext_resource type="Texture2D" uid="uid://ks4pn3ugwpqv" path="res://Assets/Backdrops/icebreaker.png" id="1_yv7tx"]
+[ext_resource type="Script" path="res://Scripts/button.gd" id="3_jorqn"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_yv7tx")
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 690.0
+offset_top = 319.0
+offset_right = 698.0
+offset_bottom = 327.0
+text = "CLICK ME
+"
+script = ExtResource("3_jorqn")
+next_level = 0
+
+[connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_pressed"]
