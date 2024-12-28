@@ -1,0 +1,99 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://ctva5g7wiidwd"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_oo1j0"]
+
+[resource]
+script = ExtResource("1_oo1j0")
+starts = {
+"START_TEST": &"0_1"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(-560, -240),
+"start_id": "START_TEST"
+},
+"1_1": {
+"dialogue": "I'm Zac!",
+"offset": Vector2(-260, -240),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": "Hi Zac!"
+},
+1: {
+"condition": {},
+"link": &"1_3",
+"text": "*Silence*"
+}
+},
+"size": Vector2(320, 260),
+"speaker": "Zac"
+},
+"1_2": {
+"dialogue": "Wanna ticket?",
+"offset": Vector2(640, -320),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": "Yes please (-$70)"
+},
+1: {
+"condition": {},
+"link": &"1_4",
+"text": "ME A DISCOUNT! DIVORCE! I GOT DIVORCE!"
+}
+},
+"size": Vector2(300, 256),
+"speaker": "Zac"
+},
+"1_3": {
+"dialogue": "*Silence*",
+"offset": Vector2(220, -20),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": "Zac"
+},
+"1_4": {
+"dialogue": "Let me speak to my manager about that.",
+"offset": Vector2(1200, -340),
+"options": {
+0: {
+"condition": {},
+"link": &"1_5",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": "Zac"
+},
+"1_5": {
+"dialogue": "Ok, my manager says I can sell you the ticket for $30 instead",
+"offset": Vector2(1708.08, -270.715),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": "Thanks! (-$70)"
+},
+1: {
+"condition": {},
+"link": "END",
+"text": "Thats still to expensive"
+}
+},
+"size": Vector2(300, 256),
+"speaker": "Zac"
+}
+}
+variables = {}
+strays = Array[String]([])
+characters = ""

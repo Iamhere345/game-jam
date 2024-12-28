@@ -1,0 +1,3 @@
+Godot 4.3
+Google Maps (street view)
+Dialoge Nodes plugin (https://github.com/nagidev/DialogueNodes)

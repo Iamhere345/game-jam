@@ -2,16 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cet4njij6wfoj"
-path="res://.godot/imported/train-attendant.jpg-b1dde140a7e0d9ebe361f4365df6732b.ctex"
+uid="uid://bnlg07ckbg0w"
+path="res://.godot/imported/Back.svg-e2758897e824f72878a141959fd22cc9.ctex"
 metadata={
+"has_editor_variant": true,
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/train-attendant.jpg"
-dest_files=["res://.godot/imported/train-attendant.jpg-b1dde140a7e0d9ebe361f4365df6732b.ctex"]
+source_file="res://addons/dialogue_nodes/icons/Back.svg"
+dest_files=["res://.godot/imported/Back.svg-e2758897e824f72878a141959fd22cc9.ctex"]
 
 [params]
 
@@ -32,3 +33,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=true
+editor/convert_colors_with_editor_theme=true

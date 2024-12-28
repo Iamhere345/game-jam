@@ -1,8 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://f2j27jx1fvnr"]
+[gd_scene load_steps=13 format=3 uid="uid://f2j27jx1fvnr"]
 
 [ext_resource type="Texture2D" uid="uid://cjgl37oucbdwe" path="res://Assets/Backdrops/traincanada.png" id="1_ng3i3"]
-[ext_resource type="Texture2D" uid="uid://cet4njij6wfoj" path="res://Assets/train-attendant.jpg" id="2_wk3mw"]
+[ext_resource type="Texture2D" uid="uid://cet4njij6wfoj" path="res://Assets/Misc/train-attendant.jpg" id="2_wk3mw"]
 [ext_resource type="Script" path="res://Scripts/button.gd" id="3_y30gs"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueBox.gd" id="4_1cckh"]
+[ext_resource type="Resource" uid="uid://ctva5g7wiidwd" path="res://Assets/Dialogue/test.tres" id="5_23p0d"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="6_qy7uo"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="7_fqpq4"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeMatrix.gd" id="8_ch20k"]
+[ext_resource type="Script" path="res://Scripts/person.gd" id="8_hf2w0"]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_40nkm"]
+script = ExtResource("6_qy7uo")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_whow7"]
+script = ExtResource("7_fqpq4")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_45esb"]
+script = ExtResource("8_ch20k")
 
 [node name="TestScene" type="Node2D"]
 
@@ -16,7 +31,7 @@ offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
+[node name="Background" type="TextureRect" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,15 +39,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_ng3i3")
-
-[node name="Person" type="TextureRect" parent="Control"]
-layout_mode = 0
-offset_left = 784.0
-offset_top = 293.0
-offset_right = 1517.0
-offset_bottom = 1317.0
-scale = Vector2(0.319944, 0.319944)
-texture = ExtResource("2_wk3mw")
 
 [node name="Button" type="Button" parent="Control"]
 layout_mode = 0
@@ -44,4 +50,34 @@ text = "CLICK ME
 "
 script = ExtResource("3_y30gs")
 
+[node name="DialogueBox" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -174.0
+offset_top = -144.0
+offset_right = -174.0
+offset_bottom = -144.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("4_1cckh")
+data = ExtResource("5_23p0d")
+start_id = "START_TEST"
+custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_40nkm"), SubResource("RichTextEffect_whow7"), SubResource("RichTextEffect_45esb")])
+
+[node name="TextureButton" type="TextureButton" parent="Control" node_paths=PackedStringArray("dialogue_box")]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 265.0
+offset_right = 1522.0
+offset_bottom = 1289.0
+scale = Vector2(0.36, 0.36)
+texture_normal = ExtResource("2_wk3mw")
+script = ExtResource("8_hf2w0")
+dialogue_box = NodePath("../DialogueBox")
+
 [connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_pressed"]
+[connection signal="pressed" from="Control/TextureButton" to="Control/TextureButton" method="_on_pressed"]
