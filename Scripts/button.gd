@@ -1,6 +1,6 @@
 extends Button
 
-@export var next_level: int = 1
+@export var next_level: int = 2
 
 # HELLO
 # Called when the node enters the scene tree for the first time.

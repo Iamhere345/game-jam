@@ -1,0 +1,32 @@
+[gd_scene load_steps=9 format=3 uid="uid://bomie30sx7gp8"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueBox.gd" id="1_h5dmd"]
+[ext_resource type="Resource" uid="uid://ctva5g7wiidwd" path="res://Assets/Dialogue/train_station.tres" id="2_1vr5n"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="3_pfq5d"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="4_ivc0j"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeMatrix.gd" id="5_l141g"]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_3refn"]
+script = ExtResource("3_pfq5d")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_g8jxp"]
+script = ExtResource("4_ivc0j")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_483v7"]
+script = ExtResource("5_l141g")
+
+[node name="CharacterDialogue" type="Panel"]
+visible = false
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 540.0
+offset_top = 800.0
+offset_right = -478.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_h5dmd")
+data = ExtResource("2_1vr5n")
+start_id = "START"
+hide_portrait = true
+custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_3refn"), SubResource("RichTextEffect_g8jxp"), SubResource("RichTextEffect_483v7")])

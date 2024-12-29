@@ -13,6 +13,7 @@ texture_normal = SubResource("PlaceholderTexture2D_ut52l")
 script = ExtResource("1_vxeur")
 
 [node name="Panel" type="Panel" parent="."]
+visible = false
 clip_contents = true
 layout_mode = 1
 anchors_preset = -1

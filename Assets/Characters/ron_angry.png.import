@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjgl37oucbdwe"
-path="res://.godot/imported/traincanada.png-a3b4ce41d67fb3fbbde9bbf296dcec73.ctex"
+uid="uid://dw83t3qcpl382"
+path="res://.godot/imported/ron_angry.png-a000957eca8a68119e84427bcfa5e365.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Backdrops/traincanada.png"
-dest_files=["res://.godot/imported/traincanada.png-a3b4ce41d67fb3fbbde9bbf296dcec73.ctex"]
+source_file="res://Assets/Characters/ron_angry.png"
+dest_files=["res://.godot/imported/ron_angry.png-a000957eca8a68119e84427bcfa5e365.ctex"]
 
 [params]
 

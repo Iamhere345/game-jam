@@ -5,13 +5,13 @@
 [resource]
 script = ExtResource("1_oo1j0")
 starts = {
-"START": &"0_1"
+"Zac": &"0_1"
 }
 nodes = {
 "0_1": {
 "link": &"1_1",
 "offset": Vector2(-560, -240),
-"start_id": "START"
+"start_id": "Zac"
 },
 "1_1": {
 "dialogue": "I'm Zac!",
@@ -37,7 +37,7 @@ nodes = {
 "options": {
 0: {
 "condition": {},
-"link": "END",
+"link": &"3_2",
 "text": "Yes please (-$70)"
 },
 1: {
@@ -64,12 +64,12 @@ nodes = {
 },
 "1_4": {
 "dialogue": "Let me speak to my manager about that.",
-"offset": Vector2(1200, -340),
+"offset": Vector2(1260, -280),
 "options": {
 0: {
 "condition": {},
-"link": &"1_5",
-"text": ""
+"link": &"3_1",
+"text": "Ok"
 }
 },
 "size": Vector2(300, 240),
@@ -77,12 +77,12 @@ nodes = {
 },
 "1_5": {
 "dialogue": "Ok, my manager says I can sell you the ticket for $30 instead",
-"offset": Vector2(1708.08, -270.715),
+"offset": Vector2(1980, -340),
 "options": {
 0: {
 "condition": {},
-"link": "END",
-"text": "Thanks! (-$70)"
+"link": &"3_3",
+"text": "Thanks! (-$30)"
 },
 1: {
 "condition": {},
@@ -92,6 +92,21 @@ nodes = {
 },
 "size": Vector2(300, 289),
 "speaker": "Zac"
+},
+"3_1": {
+"link": &"1_5",
+"offset": Vector2(1680, -340),
+"signalValue": "sub_time 40"
+},
+"3_2": {
+"link": "END",
+"offset": Vector2(1040, -320),
+"signalValue": "sub_cash 70"
+},
+"3_3": {
+"link": "END",
+"offset": Vector2(2440.83, -213.997),
+"signalValue": "sub_cash 30"
 }
 }
 variables = {}

@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://v4k8cbre5aln"]
+[gd_scene load_steps=8 format=3 uid="uid://v4k8cbre5aln"]
 
+[ext_resource type="Script" path="res://Scripts/Level_Scripts/icebreaker.gd" id="1_vs4nn"]
 [ext_resource type="Texture2D" uid="uid://ks4pn3ugwpqv" path="res://Assets/Backdrops/icebreaker.png" id="1_yv7tx"]
+[ext_resource type="Texture2D" uid="uid://c1aqyo5dk6s1h" path="res://Assets/Characters/ronswanson.png" id="3_5man8"]
 [ext_resource type="Script" path="res://Scripts/button.gd" id="3_jorqn"]
+[ext_resource type="PackedScene" uid="uid://bomie30sx7gp8" path="res://Scenes/character_dialogue.tscn" id="4_dncne"]
+[ext_resource type="Texture2D" uid="uid://dw83t3qcpl382" path="res://Assets/Characters/ron_angry.png" id="4_pigwy"]
+[ext_resource type="Resource" uid="uid://b0xhhkud106df" path="res://Assets/Dialogue/icebreaker.tres" id="5_12yxj"]
 
-[node name="TestScene" type="Node2D"]
+[node name="Icebreaker" type="Node2D"]
+script = ExtResource("1_vs4nn")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -33,6 +39,27 @@ offset_bottom = 327.0
 text = "CLICK ME
 "
 script = ExtResource("3_jorqn")
-next_level = 0
+
+[node name="RonSwanson" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 409.0
+offset_right = 1244.0
+offset_bottom = 3409.0
+scale = Vector2(0.16, 0.16)
+texture_normal = ExtResource("3_5man8")
+texture_hover = ExtResource("4_pigwy")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="CharacterDialogue" parent="Control" instance=ExtResource("4_dncne")]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+offset_left = 480.0
+offset_top = -240.0
+offset_right = -480.0
+data = ExtResource("5_12yxj")
 
 [connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_pressed"]
+[connection signal="pressed" from="Control/RonSwanson" to="." method="_on_ron_swanson_pressed"]

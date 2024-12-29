@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cet4njij6wfoj"
-path="res://.godot/imported/train-attendant.jpg-d117ee220c989a2ee97ef0ed2a7b3f93.ctex"
+uid="uid://bsl3djtg4mwj5"
+path="res://.godot/imported/watch-regular.png-904b3667590bf29e1e7133d2a12c7e42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Misc/train-attendant.jpg"
-dest_files=["res://.godot/imported/train-attendant.jpg-d117ee220c989a2ee97ef0ed2a7b3f93.ctex"]
+source_file="res://Assets/UI/watch-regular.png"
+dest_files=["res://.godot/imported/watch-regular.png-904b3667590bf29e1e7133d2a12c7e42.ctex"]
 
 [params]
 

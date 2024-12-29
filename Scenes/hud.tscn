@@ -1,11 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://bpw4dktyc7ivf"]
+[gd_scene load_steps=8 format=3 uid="uid://bpw4dktyc7ivf"]
 
-[ext_resource type="Texture2D" uid="uid://8eijustn7nps" path="res://Assets/UI/santasleep.png" id="1_e7uau"]
+[ext_resource type="Texture2D" uid="uid://bsl3djtg4mwj5" path="res://Assets/UI/watch-regular.png" id="1_pi6vx"]
+[ext_resource type="Texture2D" uid="uid://dj3ch875k4o44" path="res://Assets/UI/watch-gold.png" id="2_4kogv"]
+[ext_resource type="SystemFont" uid="uid://c4ls61egqe81y" path="res://Assets/Misc/times_roman.tres" id="2_j2owk"]
+[ext_resource type="FontFile" uid="uid://ciynkw3camipd" path="res://Assets/Misc/DSEG14Classic-Regular.ttf" id="3_3w6uw"]
+[ext_resource type="Script" path="res://Scripts/time.gd" id="4_djemd"]
+[ext_resource type="Script" path="res://Scripts/cash.gd" id="6_hta1i"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kbj34"]
-texture = ExtResource("1_e7uau")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d4li0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Hud" type="Control"]
+z_index = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,7 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Watch" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -22,4 +28,68 @@ anchor_bottom = 1.0
 offset_top = -240.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxTexture_kbj34")
+texture = ExtResource("1_pi6vx")
+
+[node name="WatchGold" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -240.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_4kogv")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_top = 840.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_d4li0")
+
+[node name="Time" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -298.0
+offset_top = -30.0
+offset_bottom = 112.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 0.411765)
+theme_override_fonts/font = ExtResource("3_3w6uw")
+theme_override_font_sizes/font_size = 100
+text = "10:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_djemd")
+
+[node name="Minute" type="Timer" parent="Panel/Time"]
+wait_time = 60.0
+autostart = true
+
+[node name="Second" type="Timer" parent="Panel/Time"]
+autostart = true
+
+[node name="Cash" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -195.0
+offset_bottom = 90.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("2_j2owk")
+theme_override_font_sizes/font_size = 80
+text = "500
+"
+vertical_alignment = 1
+script = ExtResource("6_hta1i")
+
+[connection signal="timeout" from="Panel/Time/Minute" to="Panel/Time" method="_on_minute_timeout"]
+[connection signal="timeout" from="Panel/Time/Second" to="Panel/Time" method="_on_second_timeout"]

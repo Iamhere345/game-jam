@@ -1,11 +1,14 @@
 extends Node2D
 
+@onready var hud: Control = $Hud
+
 @export var current_level_index: int = 0
 var current_level: Node
 
 func _ready() -> void:
-	change_level(0)
+	change_level(1)
 	Globals.change_level.connect(change_level)
+	Globals.hud_visible.connect(hide_hud)
 
 func change_level(index: Variant) -> void:
 	
@@ -26,3 +29,6 @@ func change_level(index: Variant) -> void:
 	await current_level.ready
 	
 	current_level_index = index
+
+func hide_hud(hide: bool):
+	hud.visible = !hide
