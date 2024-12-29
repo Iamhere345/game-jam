@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://baak44k6wiejb"]
+
+[ext_resource type="Script" path="res://Scripts/text_popup.gd" id="1_vxeur"]
+[ext_resource type="SystemFont" uid="uid://c4ls61egqe81y" path="res://Assets/Misc/times_roman.tres" id="2_sh5bs"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ut52l"]
+size = Vector2(50, 50)
+
+[node name="TextPopup" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = SubResource("PlaceholderTexture2D_ut52l")
+script = ExtResource("1_vxeur")
+
+[node name="Panel" type="Panel" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_right = 200.0
+offset_bottom = 100.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_sh5bs")
+text = "This is a text popup"
+
+[node name="Close" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -20.0
+offset_bottom = 27.0
+grow_horizontal = 0
+theme_override_colors/font_hover_pressed_color = Color(0.438582, 0.955027, 0.534197, 1)
+theme_override_colors/icon_normal_color = Color(0.987645, 0, 0.295307, 1)
+theme_override_fonts/font = ExtResource("2_sh5bs")
+text = "X"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="pressed" from="Panel/Close" to="." method="_on_close_pressed"]

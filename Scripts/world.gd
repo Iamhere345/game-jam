@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var current_level_index: int = 0
-var current_level: Node2D
+var current_level: Node
 
 func _ready() -> void:
 	change_level(0)

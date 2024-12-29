@@ -1,0 +1,107 @@
+[gd_scene load_steps=14 format=3 uid="uid://v4k8cbre5aln"]
+
+[ext_resource type="Texture2D" uid="uid://cjgl37oucbdwe" path="res://Assets/Backdrops/traincanada.png" id="1_f1ph7"]
+[ext_resource type="Script" path="res://Scripts/button.gd" id="2_m3u5s"]
+[ext_resource type="Texture2D" uid="uid://b7mv65xtljhe" path="res://Assets/Misc/train-attendant.png" id="3_800u2"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueBox.gd" id="4_puffg"]
+[ext_resource type="Resource" uid="uid://ctva5g7wiidwd" path="res://Assets/Dialogue/test.tres" id="5_cysl8"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeWait.gd" id="6_af6b8"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeGhost.gd" id="7_uxxxg"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/bbcodeMatrix.gd" id="8_hkkj1"]
+[ext_resource type="PackedScene" uid="uid://baak44k6wiejb" path="res://Scenes/text_popup.tscn" id="9_1a6y8"]
+
+[sub_resource type="GDScript" id="GDScript_b4gw7"]
+script/source = "extends TextureButton
+
+@export var dialogue_box: DialogueBox
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_pressed() -> void:
+	dialogue_box.start(\"START\")
+"
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_3refn"]
+script = ExtResource("6_af6b8")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_g8jxp"]
+script = ExtResource("7_uxxxg")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_483v7"]
+script = ExtResource("8_hkkj1")
+
+[node name="TrainStation" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_f1ph7")
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 690.0
+offset_top = 319.0
+offset_right = 770.0
+offset_bottom = 350.0
+text = "CLICK ME
+"
+script = ExtResource("2_m3u5s")
+
+[node name="TextureButton" type="TextureButton" parent="Control" node_paths=PackedStringArray("dialogue_box")]
+layout_mode = 0
+offset_left = 713.0
+offset_top = 364.0
+offset_right = 2213.0
+offset_bottom = 1844.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("3_800u2")
+stretch_mode = 0
+script = SubResource("GDScript_b4gw7")
+dialogue_box = NodePath("../DialogueBox")
+
+[node name="DialogueBox" type="Panel" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 800.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("4_puffg")
+data = ExtResource("5_cysl8")
+start_id = "START"
+hide_portrait = true
+custom_effects = Array[RichTextEffect]([SubResource("RichTextEffect_3refn"), SubResource("RichTextEffect_g8jxp"), SubResource("RichTextEffect_483v7")])
+
+[node name="TextPopup" parent="Control" instance=ExtResource("9_1a6y8")]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 595.0
+offset_right = 186.0
+offset_bottom = 645.0
+
+[connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_pressed"]
+[connection signal="pressed" from="Control/TextureButton" to="Control/TextureButton" method="_on_pressed"]

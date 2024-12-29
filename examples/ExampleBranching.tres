@@ -91,7 +91,7 @@ nodes = {
 },
 "2_1": {
 "comment": "Create branching dialogues using different options.",
-"offset": Vector2(-200, 80),
+"offset": Vector2(-280, 160),
 "size": Vector2(392.562, 100)
 },
 "2_2": {
@@ -101,5 +101,5 @@ nodes = {
 }
 }
 variables = {}
-strays = Array[String](["2_1", "2_2"])
+strays = Array[String](["2_2", "2_1"])
 characters = ""
