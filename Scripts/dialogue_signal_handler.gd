@@ -23,5 +23,7 @@ func on_signal(value: String):
 			Globals.add_cash.emit(int(arg))
 		'sub_cash':
 			Globals.sub_cash.emit(int(arg))
+		'next_level':
+			Globals.prep_next_level.emit()
 		'game_over':
 			Globals.game_over.emit(value.split(" ", true, 1))

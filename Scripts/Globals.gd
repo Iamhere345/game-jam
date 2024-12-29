@@ -11,3 +11,6 @@ signal add_cash(amount: int)
 signal sub_cash(amount: int)
 
 signal game_over(text: String)
+signal prep_next_level
+
+@export var current_level: int = 0

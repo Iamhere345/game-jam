@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://Scripts/Level_Scripts/icebreaker.gd" id="1_vs4nn"]
 [ext_resource type="Texture2D" uid="uid://ks4pn3ugwpqv" path="res://Assets/Backdrops/icebreaker.png" id="1_yv7tx"]
 [ext_resource type="Texture2D" uid="uid://c1aqyo5dk6s1h" path="res://Assets/Characters/ronswanson.png" id="3_5man8"]
-[ext_resource type="Script" path="res://Scripts/button.gd" id="3_jorqn"]
 [ext_resource type="PackedScene" uid="uid://bomie30sx7gp8" path="res://Scenes/character_dialogue.tscn" id="4_dncne"]
 [ext_resource type="Texture2D" uid="uid://dw83t3qcpl382" path="res://Assets/Characters/ron_angry.png" id="4_pigwy"]
 [ext_resource type="Resource" uid="uid://b0xhhkud106df" path="res://Assets/Dialogue/icebreaker.tres" id="5_12yxj"]
+[ext_resource type="PackedScene" uid="uid://du3rn8dhpja28" path="res://Scenes/fade.tscn" id="8_jwdou"]
 
 [node name="Icebreaker" type="Node2D"]
 script = ExtResource("1_vs4nn")
@@ -20,6 +20,10 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Fade" parent="Control" instance=ExtResource("8_jwdou")]
+visible = false
+layout_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="Control"]
 layout_mode = 1
@@ -38,7 +42,6 @@ offset_right = 698.0
 offset_bottom = 327.0
 text = "CLICK ME
 "
-script = ExtResource("3_jorqn")
 
 [node name="RonSwanson" type="TextureButton" parent="Control"]
 layout_mode = 0
