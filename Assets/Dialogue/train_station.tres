@@ -72,7 +72,7 @@ nodes = {
 "text": "Ok"
 }
 },
-"size": Vector2(300, 256),
+"size": Vector2(300, 240),
 "speaker": "Zac"
 },
 "1_5": {
