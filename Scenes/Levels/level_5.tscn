@@ -56,6 +56,17 @@ show_next = true
 [node name="TextureRect" parent="Control/TassieFade" index="0"]
 texture = ExtResource("9_ux5em")
 
+[node name="CharacterDialogue" parent="Control" instance=ExtResource("4_cfnad")]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+offset_left = 320.0
+offset_top = -240.0
+offset_right = -320.0
+data = ExtResource("5_a26i0")
+start_id = "Zac"
+options_vertical = true
+
 [node name="Pilot" type="TextureButton" parent="."]
 offset_left = 824.0
 offset_top = 344.0
@@ -64,22 +75,10 @@ offset_bottom = 1544.0
 scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("2_opr2s")
 
-[node name="CharacterDialogue" parent="." instance=ExtResource("4_cfnad")]
-anchors_preset = 12
-anchor_top = 1.0
-offset_left = 320.0
-offset_top = 840.0
-offset_right = 320.0
-offset_bottom = 1080.0
-data = ExtResource("5_a26i0")
-start_id = "Zac"
-options_vertical = true
-
 [node name="DialogueSignalHandler" parent="." node_paths=PackedStringArray("dialogue") instance=ExtResource("6_y6ujg")]
-dialogue = NodePath("../CharacterDialogue")
+dialogue = NodePath("../Control/CharacterDialogue")
 
 [connection signal="pressed" from="Pilot" to="." method="_on_pilot_pressed"]
-[connection signal="dialogue_signal" from="CharacterDialogue" to="." method="_on_character_dialogue_dialogue_signal"]
 
 [editable path="Control/StartFade"]
 [editable path="Control/EndFade"]

@@ -184,7 +184,7 @@ offset_bottom = 432.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_wh4s5")
 theme_override_font_sizes/font_size = 50
-text = "After centuries of being together, Mr and Mrs Claus decided to split. Santa has decided to move to the south pole - with the reindeer staying at the North Pole and the last boat to the South Pole leaving from Hobart, Australia in 10 hours, Santa must take an icebreaker to Canada, where he’ll get the train to America and travel to New York city to meet up with Mrs. Claus, then he’ll take a flight to Hobart and catch the last boat to the SOUTH POLE.
+text = "After centuries of being together, Mr and Mrs Claus decided to split. Santa has decided to move to the south pole - with the reindeer staying at the North Pole and the last boat to the South Pole leaving from Hobart, Australia in 10 hours, Santa must take an icebreaker to Canada, where he’ll get the train to America and travel to New York city, then he’ll take a flight to Hobart and catch the last boat to the SOUTH POLE.
 "
 horizontal_alignment = 1
 autowrap_mode = 2

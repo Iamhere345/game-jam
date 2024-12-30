@@ -383,7 +383,7 @@ nodes = {
 "3_5": {
 "link": "END",
 "offset": Vector2(3680, 960),
-"signalValue": "game_over the driver wasn't looking at the road and veered of the road"
+"signalValue": "game_over the driver wasn't looking and veered of the road"
 },
 "3_6": {
 "link": &"1_6",

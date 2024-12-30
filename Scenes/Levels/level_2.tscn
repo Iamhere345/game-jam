@@ -45,13 +45,14 @@ stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="CharacterDialogue" parent="Control" instance=ExtResource("5_3tlxv")]
+visible = true
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 offset_left = 320.0
-offset_top = -511.0
+offset_top = -242.0
 offset_right = -320.0
-offset_bottom = -271.0
+offset_bottom = -2.0
 start_id = "Zac"
 options_vertical = true
 

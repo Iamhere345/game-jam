@@ -37,6 +37,7 @@ layout_mode = 1
 texture = ExtResource("2_bq0gd")
 
 [node name="Boat" type="TextureButton" parent="Control"]
+z_index = 100
 layout_mode = 0
 offset_left = 888.0
 offset_top = 304.0
@@ -54,8 +55,12 @@ show_next = true
 texture = ExtResource("4_ctj6q")
 
 [node name="Win" parent="." instance=ExtResource("5_vlf6b")]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
 
 [connection signal="pressed" from="Control/Boat" to="." method="_on_boat_pressed"]
 
 [editable path="Control/Fade"]
 [editable path="Control/Ending"]
+[editable path="Win"]

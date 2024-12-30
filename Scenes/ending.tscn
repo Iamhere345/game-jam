@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bkfvpu2dlho0m"]
 
-[ext_resource type="Script" path="res://Scripts/game_over.gd" id="1_fnfwm"]
+[ext_resource type="Script" path="res://Scripts/ending.gd" id="1_sc2pq"]
 [ext_resource type="SystemFont" uid="uid://c4ls61egqe81y" path="res://Assets/Misc/times_roman.tres" id="2_ewbot"]
 
 [sub_resource type="Theme" id="Theme_2ai74"]
@@ -46,6 +46,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlayAgain:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_8jmj6"]
 resource_name = "fade_background"
@@ -89,6 +101,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("PlayAgain:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mb8ok"]
 _data = {
@@ -110,7 +134,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-script = ExtResource("1_fnfwm")
+script = ExtResource("1_sc2pq")
 
 [node name="Background" type="Panel" parent="."]
 layout_mode = 1
