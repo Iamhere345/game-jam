@@ -214,7 +214,7 @@ oh theres gonna be hell to pay for this.",
 "offset": Vector2(2940, -80),
 "operator": 0,
 "true": &"1_9",
-"value1": "watch",
+"value1": "{{watch}}",
 "value2": "true"
 }
 }

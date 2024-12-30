@@ -49,8 +49,9 @@ layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 offset_left = 320.0
-offset_top = -240.0
+offset_top = -511.0
 offset_right = -320.0
+offset_bottom = -271.0
 start_id = "Zac"
 options_vertical = true
 

@@ -9,7 +9,7 @@ extends Node2D
 var has_gold_watch: bool = false
 
 func _ready() -> void:
-	change_level(1)
+	change_level(0)
 	Globals.change_level.connect(change_level)
 	Globals.hud_visible.connect(hide_hud)
 	Globals.gold_watch.connect(func(give: bool):

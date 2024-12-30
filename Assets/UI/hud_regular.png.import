@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://l4320qe55qdj"
-path="res://.godot/imported/santasleep-goldt.png-6f1f060f3e51f0b94443874bcc2dfc74.ctex"
+uid="uid://8eijustn7nps"
+path="res://.godot/imported/hud_regular.png-45138c224eacdf77e9a94723016481a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/santasleep-goldt.png"
-dest_files=["res://.godot/imported/santasleep-goldt.png-6f1f060f3e51f0b94443874bcc2dfc74.ctex"]
+source_file="res://Assets/UI/hud_regular.png"
+dest_files=["res://.godot/imported/hud_regular.png-45138c224eacdf77e9a94723016481a4.ctex"]
 
 [params]
 

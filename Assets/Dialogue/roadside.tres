@@ -34,7 +34,7 @@ nodes = {
 "text": "No"
 }
 },
-"size": Vector2(300, 256),
+"size": Vector2(300, 289),
 "speaker": "_"
 },
 "1_2": {
@@ -52,12 +52,12 @@ nodes = {
 "text": "No"
 }
 },
-"size": Vector2(300, 256),
+"size": Vector2(300, 289),
 "speaker": "_"
 },
 "3_1": {
 "link": "END",
-"offset": Vector2(680, -300),
+"offset": Vector2(960, -280),
 "signalValue": "catch_bus"
 },
 "3_2": {
@@ -66,9 +66,14 @@ nodes = {
 "signalValue": "catch_car"
 },
 "3_3": {
-"link": &"3_1",
+"link": &"3_4",
 "offset": Vector2(351.137, -292.389),
 "signalValue": "sub_cash 115"
+},
+"3_4": {
+"link": &"3_1",
+"offset": Vector2(660, -360),
+"signalValue": "sub_time 120"
 }
 }
 variables = {}

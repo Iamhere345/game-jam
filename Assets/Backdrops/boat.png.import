@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8eijustn7nps"
-path="res://.godot/imported/santasleep.png-66bc069929feeaaf26c05d4d39879f8e.ctex"
+uid="uid://cvvlhkyy5qwny"
+path="res://.godot/imported/boat.png-8c6b3bb6e5ad4173cf8eb4b2422ecd29.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/santasleep.png"
-dest_files=["res://.godot/imported/santasleep.png-66bc069929feeaaf26c05d4d39879f8e.ctex"]
+source_file="res://Assets/Backdrops/boat.png"
+dest_files=["res://.godot/imported/boat.png-8c6b3bb6e5ad4173cf8eb4b2422ecd29.ctex"]
 
 [params]
 

@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://chm2n2xdn1idf"]
+
+[ext_resource type="PackedScene" uid="uid://du3rn8dhpja28" path="res://Scenes/fade.tscn" id="1_551ad"]
+[ext_resource type="Script" path="res://Scripts/Level_Scripts/final_boat.gd" id="1_di3s1"]
+[ext_resource type="Texture2D" uid="uid://cvvlhkyy5qwny" path="res://Assets/Backdrops/boat.png" id="1_wc4sq"]
+[ext_resource type="Texture2D" uid="uid://dtd1fh6j0u15x" path="res://Assets/Transitions/tassie_transition.png" id="2_bq0gd"]
+[ext_resource type="Texture2D" uid="uid://mbc7bnp54x51" path="res://Assets/Transitions/south_pole.png" id="4_ctj6q"]
+[ext_resource type="PackedScene" uid="uid://bkfvpu2dlho0m" path="res://Scenes/ending.tscn" id="5_vlf6b"]
+
+[node name="FinalBoat" type="Node2D"]
+script = ExtResource("1_di3s1")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_wc4sq")
+
+[node name="Fade" parent="Control" instance=ExtResource("1_551ad")]
+visible = false
+layout_mode = 1
+
+[node name="TextureRect" parent="Control/Fade" index="0"]
+texture = ExtResource("2_bq0gd")
+
+[node name="Boat" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 888.0
+offset_top = 304.0
+offset_right = 928.0
+offset_bottom = 344.0
+scale = Vector2(14.1231, 8.07436)
+mouse_default_cursor_shape = 2
+
+[node name="Ending" parent="Control" instance=ExtResource("1_551ad")]
+visible = false
+layout_mode = 1
+show_next = true
+
+[node name="TextureRect" parent="Control/Ending" index="0"]
+texture = ExtResource("4_ctj6q")
+
+[node name="Win" parent="." instance=ExtResource("5_vlf6b")]
+
+[connection signal="pressed" from="Control/Boat" to="." method="_on_boat_pressed"]
+
+[editable path="Control/Fade"]
+[editable path="Control/Ending"]

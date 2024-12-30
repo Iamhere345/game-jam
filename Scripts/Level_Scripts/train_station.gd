@@ -17,17 +17,14 @@ func _on_zac_pressed() -> void:
 	dialogue.start("Zac")
 
 func _on_character_dialogue_dialogue_signal(value: String) -> void:
-	pass
+	print("value: " + value)
+	
 	match value:
-		'timeskip':
-			print("TIMESKIP")
-			Globals.sub_time.emit(40)
-		'ticket_normal':
-			Globals.sub_cash.emit(70)
-		'ticket_discount':
-			Globals.sub_cash.emit(30)
+		'mango':
+			Globals.mango.emit(true)
 
 func next_level():
+	print("prep next lvl")
 	end_fade.fade_out()
 	
 	await end_fade.next_pressed

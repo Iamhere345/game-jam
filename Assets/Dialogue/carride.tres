@@ -318,12 +318,12 @@ nodes = {
 "speaker": "Driver"
 },
 "1_9": {
-"dialogue": "after a few hours you finally arive at new york",
+"dialogue": "after a few hours you finally arrive at new york",
 "offset": Vector2(4320, 620),
 "options": {
 0: {
 "condition": {},
-"link": &"3_13",
+"link": &"3_7",
 "text": ""
 }
 },
@@ -352,7 +352,7 @@ nodes = {
 },
 "3_13": {
 "link": "END",
-"offset": Vector2(4680, 780),
+"offset": Vector2(5080, 780),
 "signalValue": "next_level"
 },
 "3_14": {
@@ -389,6 +389,11 @@ nodes = {
 "link": &"1_6",
 "offset": Vector2(2040, 360),
 "signalValue": "forward"
+},
+"3_7": {
+"link": &"3_13",
+"offset": Vector2(4729.19, 786.327),
+"signalValue": "sub_time 240"
 },
 "3_8": {
 "link": &"1_19",

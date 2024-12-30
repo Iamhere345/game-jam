@@ -101,8 +101,8 @@ the carriage door slides open and the conductor walks down the aisle, he asks fo
 "speaker": "_"
 },
 "1_14": {
-"dialogue": "the train takes off",
-"offset": Vector2(4200, 780),
+"dialogue": "the train takes off.",
+"offset": Vector2(4328.41, 978.193),
 "options": {
 0: {
 "condition": {},
@@ -128,7 +128,7 @@ the carriage door slides open and the conductor walks down the aisle, he asks fo
 "text": "woah woah woah, don't be hasty, look give me the ticket for 50 bucks, and a there will be a playstation sitting under your tree next christmas"
 }
 },
-"size": Vector2(480, 256),
+"size": Vector2(480, 289),
 "speaker": "Zac"
 },
 "1_16": {
@@ -353,7 +353,7 @@ for real?",
 },
 "1_28": {
 "dialogue": "you leave the station, you here the train whistle as the train pulls in, if you ran it looks theres two carriages you could get onto.",
-"offset": Vector2(3820, 1060),
+"offset": Vector2(3860, 1080),
 "options": {
 0: {
 "condition": {},
@@ -549,7 +549,7 @@ the tickets are 300 dollars now",
 },
 "3_4": {
 "link": "END",
-"offset": Vector2(2600, -600),
+"offset": Vector2(2620, -620),
 "signalValue": "next_level"
 },
 "3_5": {
@@ -564,7 +564,7 @@ the tickets are 300 dollars now",
 },
 "3_7": {
 "link": &"1_14",
-"offset": Vector2(3600, 800),
+"offset": Vector2(3620, 800),
 "signalValue": "mango"
 },
 "3_8": {

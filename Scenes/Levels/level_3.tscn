@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d4ldykuxfsw23"]
+[gd_scene load_steps=12 format=3 uid="uid://d4ldykuxfsw23"]
 
 [ext_resource type="Script" path="res://Scripts/Level_Scripts/roadside.gd" id="1_13tbk"]
 [ext_resource type="Texture2D" uid="uid://gfv0hj1mwk5r" path="res://Assets/Backdrops/road.png" id="1_qpggs"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c0r4wvnmq63gx" path="res://Assets/Characters/bus_transition.png" id="8_em5ua"]
 [ext_resource type="Texture2D" uid="uid://d3n2osu1p454o" path="res://Assets/Characters/ScarGO.png" id="9_57lts"]
 [ext_resource type="Texture2D" uid="uid://lh5xwbbcr11c" path="res://Assets/Transitions/nycityintro.png" id="10_vwo2b"]
+[ext_resource type="PackedScene" uid="uid://chnteigshnd7x" path="res://Scenes/dialogue_signal_handler.tscn" id="11_xyxbd"]
 
 [node name="Roadside" type="Node2D"]
 script = ExtResource("1_13tbk")
@@ -91,6 +92,9 @@ show_next = true
 
 [node name="TextureRect" parent="Control/NYCFade" index="0"]
 texture = ExtResource("10_vwo2b")
+
+[node name="DialogueSignalHandler" parent="." node_paths=PackedStringArray("dialogue") instance=ExtResource("11_xyxbd")]
+dialogue = NodePath("../Control/CharacterDialogue")
 
 [connection signal="pressed" from="Control/BusStop" to="." method="_on_bus_stop_pressed"]
 [connection signal="dialogue_signal" from="Control/CharacterDialogue" to="." method="_on_character_dialogue_dialogue_signal"]
