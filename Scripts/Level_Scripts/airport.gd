@@ -12,6 +12,7 @@ func _ready() -> void:
 	
 	dialogue.variables["mango"] = Globals.has_mango
 	dialogue.variables["watch"] = Globals.has_watch
+	dialogue.variables["cash"] = Globals.cash
 
 func next_level():
 	end_fade.fade_out()

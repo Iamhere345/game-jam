@@ -9,23 +9,18 @@ starts = {
 }
 nodes = {
 "0_1": {
-"link": &"1_1",
-"offset": Vector2(-640, 0),
+"link": &"5_4",
+"offset": Vector2(-1080, 20),
 "start_id": "Pilot"
 },
 "1_1": {
 "dialogue": "Welcome aboard, today we'll be flying from New york city, to Hobart Australia! Tickets are two hundred dollars.",
-"offset": Vector2(-420, -60),
+"offset": Vector2(40, -220),
 "options": {
 0: {
 "condition": {},
-"link": &"1_4",
+"link": "END",
 "text": "one ticket please"
-},
-1: {
-"condition": {},
-"link": &"5_1",
-"text": "uhm I dont have enough"
 }
 },
 "size": Vector2(300, 289),
@@ -45,6 +40,37 @@ her eyes glisten, she takes it from you and slides it into her pocket*
 },
 "size": Vector2(340, 280),
 "speaker": "_"
+},
+"1_11": {
+"dialogue": "Welcome aboard, today we'll be flying from New york city, to Hobart Australia! Tickets are two hundred dollars.",
+"offset": Vector2(-620, 420),
+"options": {
+0: {
+"condition": {},
+"link": &"5_5",
+"text": "uhm I dont have enough"
+}
+},
+"size": Vector2(300, 240),
+"speaker": "Pilot"
+},
+"1_12": {
+"dialogue": "Welcome aboard, today we'll be flying from New york city, to Hobart Australia! Tickets are two hundred dollars.",
+"offset": Vector2(40, -520),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": "one ticket please"
+},
+1: {
+"condition": {},
+"link": "END",
+"text": "could I offer you this premium watch instead?"
+}
+},
+"size": Vector2(300, 256),
+"speaker": "Pilot"
 },
 "1_2": {
 "dialogue": "then you cant ride the plane!",
@@ -75,7 +101,7 @@ she takes it from you and slides it into her pocket*",
 },
 "1_4": {
 "dialogue": "Enjoy your flight!",
-"offset": Vector2(1420, -40),
+"offset": Vector2(1560, -200),
 "options": {
 0: {
 "condition": {},
@@ -159,7 +185,7 @@ oh theres gonna be hell to pay for this.",
 "3_1": {
 "link": "END",
 "offset": Vector2(709.039, 626.584),
-"signalValue": "game_over santa couldnt afford the plane ticket and spent the rest of his day wandering time square"
+"signalValue": "game_over santa couldnt afford the plane ticket and spent the rest of his days wandering time square"
 },
 "3_2": {
 "link": &"3_3",
@@ -194,10 +220,10 @@ oh theres gonna be hell to pay for this.",
 "variable": "watch"
 },
 "5_1": {
-"false": &"1_5",
-"offset": Vector2(-40, 120),
+"false": &"1_1",
+"offset": Vector2(-440, -260),
 "operator": 0,
-"true": &"1_2",
+"true": &"1_12",
 "value1": "{{watch}}",
 "value2": "true"
 },
@@ -216,9 +242,29 @@ oh theres gonna be hell to pay for this.",
 "true": &"1_9",
 "value1": "{{watch}}",
 "value2": "true"
+},
+"5_4": {
+"false": &"1_11",
+"offset": Vector2(-780, -20),
+"operator": 4,
+"true": &"5_1",
+"value1": "{{cash}}",
+"value2": "200"
+},
+"5_5": {
+"false": &"1_5",
+"offset": Vector2(-40, 280),
+"operator": 0,
+"true": &"1_2",
+"value1": "{{watch}}",
+"value2": "true"
 }
 }
 variables = {
+"cash": {
+"type": 2,
+"value": 0
+},
 "mango": {
 "type": 1,
 "value": false

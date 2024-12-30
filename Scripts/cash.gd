@@ -11,6 +11,7 @@ func _ready() -> void:
 
 func update_ui():
 	text = str(cash)
+	Globals.cash = cash
 
 func set_cash(new_cash: int):
 	cash = new_cash
