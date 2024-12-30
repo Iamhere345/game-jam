@@ -25,3 +25,6 @@ func sub_cash(amount: int):
 	print("cash -= " + str(amount))
 	cash -= amount
 	update_ui()
+	
+	if cash <= 0:
+		Globals.game_over.emit("Santa couldn't afford to continue his journey and nowhere to go.")

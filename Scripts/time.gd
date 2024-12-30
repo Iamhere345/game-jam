@@ -22,6 +22,8 @@ func parse_time() -> String:
 
 func sub_time(amount: int):
 	time_left -= amount
+	if time_left <= 0:
+		Globals.game_over.emit("The last boat for the South Pole, and had nowhere to go.")
 
 func set_time(time: int):
 	time_left = time
