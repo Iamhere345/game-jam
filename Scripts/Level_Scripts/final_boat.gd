@@ -9,7 +9,7 @@ var playstles = ["Koala", "Reindeer", "Hare", "Turtle", "PlayStation® 3™", "C
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	fade.fade_out()
+	fade.fade_in()
 	await fade.fade_finished
 
 func _on_boat_pressed() -> void:
