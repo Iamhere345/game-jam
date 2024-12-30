@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d4ldykuxfsw23"]
+[gd_scene load_steps=14 format=3 uid="uid://d4ldykuxfsw23"]
 
 [ext_resource type="Script" path="res://Scripts/Level_Scripts/roadside.gd" id="1_13tbk"]
 [ext_resource type="Texture2D" uid="uid://gfv0hj1mwk5r" path="res://Assets/Backdrops/road.png" id="1_qpggs"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://d3n2osu1p454o" path="res://Assets/Characters/ScarGO.png" id="9_57lts"]
 [ext_resource type="Texture2D" uid="uid://lh5xwbbcr11c" path="res://Assets/Transitions/nycityintro.png" id="10_vwo2b"]
 [ext_resource type="PackedScene" uid="uid://chnteigshnd7x" path="res://Scenes/dialogue_signal_handler.tscn" id="11_xyxbd"]
+[ext_resource type="AudioStream" uid="uid://x7hgmssqvenb" path="res://Assets/Misc/Buus.wav" id="12_wnbib"]
+[ext_resource type="AudioStream" uid="uid://bkc6n67wxh5jk" path="res://Assets/Misc/cargo.wav" id="13_5sfhn"]
 
 [node name="Roadside" type="Node2D"]
 script = ExtResource("1_13tbk")
@@ -60,10 +62,11 @@ data = ExtResource("6_uv2cu")
 start_id = "Zac"
 options_vertical = true
 
-[node name="BusFade" parent="Control" instance=ExtResource("2_hasq1")]
+[node name="BusFade" parent="Control" node_paths=PackedStringArray("sfx") instance=ExtResource("2_hasq1")]
 visible = false
 layout_mode = 1
 show_next = true
+sfx = NodePath("../../Buus")
 
 [node name="TextureRect" parent="Control/BusFade" index="0"]
 texture = ExtResource("8_em5ua")
@@ -71,9 +74,10 @@ texture = ExtResource("8_em5ua")
 [node name="Next" parent="Control/BusFade" index="2"]
 z_index = 20
 
-[node name="CarFade" parent="Control" instance=ExtResource("2_hasq1")]
+[node name="CarFade" parent="Control" node_paths=PackedStringArray("sfx") instance=ExtResource("2_hasq1")]
 visible = false
 layout_mode = 1
+sfx = NodePath("../../Cargo")
 
 [node name="Car" type="TextureButton" parent="Control"]
 layout_mode = 0
@@ -95,6 +99,12 @@ texture = ExtResource("10_vwo2b")
 
 [node name="DialogueSignalHandler" parent="." node_paths=PackedStringArray("dialogue") instance=ExtResource("11_xyxbd")]
 dialogue = NodePath("../Control/CharacterDialogue")
+
+[node name="Buus" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_wnbib")
+
+[node name="Cargo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_5sfhn")
 
 [connection signal="pressed" from="Control/BusStop" to="." method="_on_bus_stop_pressed"]
 [connection signal="dialogue_signal" from="Control/CharacterDialogue" to="." method="_on_character_dialogue_dialogue_signal"]

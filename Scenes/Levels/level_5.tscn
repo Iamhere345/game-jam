@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cyr7c07vh37rl"]
+[gd_scene load_steps=12 format=3 uid="uid://cyr7c07vh37rl"]
 
 [ext_resource type="Texture2D" uid="uid://poe20jebjpx8" path="res://Assets/Backdrops/plane_door.png" id="1_6s10p"]
 [ext_resource type="Script" path="res://Scripts/Level_Scripts/airport.gd" id="1_uxko0"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://5313mp82bci4" path="res://Assets/Transitions/plane_transition.png" id="7_2pai3"]
 [ext_resource type="Texture2D" uid="uid://lh5xwbbcr11c" path="res://Assets/Transitions/nycityintro.png" id="7_e1jww"]
 [ext_resource type="Texture2D" uid="uid://dtd1fh6j0u15x" path="res://Assets/Transitions/tassie_transition.png" id="9_ux5em"]
+[ext_resource type="AudioStream" uid="uid://i3vikmuam2f0" path="res://Assets/Misc/plane.wav" id="11_ud5tx"]
 
 [node name="Airport" type="Node2D"]
 script = ExtResource("1_uxko0")
@@ -40,10 +41,11 @@ layout_mode = 1
 [node name="TextureRect" parent="Control/StartFade" index="0"]
 texture = ExtResource("7_e1jww")
 
-[node name="EndFade" parent="Control" instance=ExtResource("6_pi0v1")]
+[node name="EndFade" parent="Control" node_paths=PackedStringArray("sfx") instance=ExtResource("6_pi0v1")]
 visible = false
 layout_mode = 1
 show_next = true
+sfx = NodePath("../../Plane")
 
 [node name="TextureRect" parent="Control/EndFade" index="0"]
 texture = ExtResource("7_2pai3")
@@ -77,6 +79,9 @@ texture_normal = ExtResource("2_opr2s")
 
 [node name="DialogueSignalHandler" parent="." node_paths=PackedStringArray("dialogue") instance=ExtResource("6_y6ujg")]
 dialogue = NodePath("../Control/CharacterDialogue")
+
+[node name="Plane" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_ud5tx")
 
 [connection signal="pressed" from="Pilot" to="." method="_on_pilot_pressed"]
 

@@ -21,6 +21,8 @@ signal variable_changed(variable_name : String, value)
 ## Triggered when a dialogue tree has ended processing and reached the end of the dialogue.
 ## The [DialogueBox] may hide based on the [member hide_on_dialogue_end] property.
 signal dialogue_ended
+## Triggered when the current dialogue node finishes being typed
+signal wait_ended
 
 
 @export_group('Data')
@@ -300,6 +302,8 @@ func _on_dialogue_processed(speaker : Variant, dialogue : String, options : Arra
 			effect.skip = false
 			break
 	
+	print("???")
+	
 	# set options
 	for idx in range(options_container.get_child_count()):
 		var option : Button = options_container.get_child(idx)
@@ -332,5 +336,8 @@ func _on_dialogue_ended():
 
 
 func _on_wait_finished():
+	print("HELLO?")
+	print("wait finished")
+	wait_ended.emit()
 	options_container.show()
 	options_container.get_child(0).grab_focus()

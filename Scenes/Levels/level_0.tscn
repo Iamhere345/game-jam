@@ -1,18 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://b4w7vdxga2to3"]
+[gd_scene load_steps=8 format=3 uid="uid://b4w7vdxga2to3"]
 
 [ext_resource type="Script" path="res://Scripts/Level_Scripts/title_screen.gd" id="1_oxb3u"]
+[ext_resource type="Texture2D" uid="uid://ckdamdaw46iek" path="res://Assets/Backdrops/title_background.png" id="2_cby18"]
 [ext_resource type="SystemFont" uid="uid://c4ls61egqe81y" path="res://Assets/Misc/times_roman.tres" id="2_wh4s5"]
 
-[sub_resource type="Theme" id="Theme_2ai74"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_563qi"]
-bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k7huw"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4fepg"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0d4rd"]
+bg_color = Color(0.172833, 0.172833, 0.172833, 0.627451)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [sub_resource type="Animation" id="Animation_o4vbj"]
 length = 0.001
@@ -107,15 +104,14 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 script = ExtResource("1_oxb3u")
 
-[node name="Background" type="Panel" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_2ai74")
-theme_override_styles/panel = SubResource("StyleBoxFlat_563qi")
+texture = ExtResource("2_cby18")
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
@@ -148,7 +144,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_wh4s5")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxFlat_k7huw")
 text = "PLAY
 "
 
@@ -168,7 +163,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_wh4s5")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxFlat_4fepg")
 text = "NEXT
 "
 
@@ -184,6 +178,7 @@ offset_bottom = 432.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_wh4s5")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_0d4rd")
 text = "After centuries of being together, Mr and Mrs Claus decided to split. Santa has decided to move to the south pole - with the reindeer staying at the North Pole and the last boat to the South Pole leaving from Hobart, Australia in 10 hours, Santa must take an icebreaker to Canada, where he’ll get the train to America and travel to New York city, then he’ll take a flight to Hobart and catch the last boat to the SOUTH POLE.
 "
 horizontal_alignment = 1

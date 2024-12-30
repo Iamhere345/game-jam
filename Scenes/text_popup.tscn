@@ -31,6 +31,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_sh5bs")
 text = "This is a text popup"
+autowrap_mode = 3
 
 [node name="Close" type="Button" parent="Panel"]
 layout_mode = 1

@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://v4k8cbre5aln"]
+[gd_scene load_steps=13 format=3 uid="uid://v4k8cbre5aln"]
 
 [ext_resource type="Script" path="res://Scripts/Level_Scripts/icebreaker.gd" id="1_vs4nn"]
 [ext_resource type="Texture2D" uid="uid://ks4pn3ugwpqv" path="res://Assets/Backdrops/icebreaker.png" id="1_yv7tx"]
 [ext_resource type="Texture2D" uid="uid://c1aqyo5dk6s1h" path="res://Assets/Characters/ronswanson.png" id="3_5man8"]
+[ext_resource type="Texture2D" uid="uid://ckdamdaw46iek" path="res://Assets/Backdrops/title_background.png" id="3_twdrr"]
 [ext_resource type="Texture2D" uid="uid://ed41mh1lqqqt" path="res://Assets/Transitions/train_station.png" id="4_1g4um"]
 [ext_resource type="PackedScene" uid="uid://bomie30sx7gp8" path="res://Scenes/character_dialogue.tscn" id="4_dncne"]
 [ext_resource type="Texture2D" uid="uid://cp4y0x5gwg4ua" path="res://Assets/Transitions/icebreaker_transition.png" id="4_hkn1l"]
@@ -10,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://b0xhhkud106df" path="res://Assets/Dialogue/icebreaker.tres" id="5_12yxj"]
 [ext_resource type="PackedScene" uid="uid://du3rn8dhpja28" path="res://Scenes/fade.tscn" id="8_jwdou"]
 [ext_resource type="PackedScene" uid="uid://chnteigshnd7x" path="res://Scenes/dialogue_signal_handler.tscn" id="9_34u8w"]
+[ext_resource type="AudioStream" uid="uid://crvhntwnuostw" path="res://Assets/Misc/motor.wav" id="12_qhvcv"]
 
 [node name="Icebreaker" type="Node2D"]
 script = ExtResource("1_vs4nn")
@@ -27,6 +29,9 @@ grow_vertical = 2
 [node name="Fade" parent="Control" instance=ExtResource("8_jwdou")]
 visible = false
 layout_mode = 1
+
+[node name="TextureRect" parent="Control/Fade" index="0"]
+texture = ExtResource("3_twdrr")
 
 [node name="Background" type="TextureRect" parent="Control"]
 layout_mode = 1
@@ -67,10 +72,11 @@ show_next = true
 [node name="TextureRect" parent="Control/Transition2" index="0"]
 texture = ExtResource("4_1g4um")
 
-[node name="Transition" parent="Control" instance=ExtResource("8_jwdou")]
+[node name="Transition" parent="Control" node_paths=PackedStringArray("sfx") instance=ExtResource("8_jwdou")]
 visible = false
 layout_mode = 1
 show_next = true
+sfx = NodePath("../../Motor")
 
 [node name="TextureRect" parent="Control/Transition" index="0"]
 texture = ExtResource("4_hkn1l")
@@ -78,8 +84,12 @@ texture = ExtResource("4_hkn1l")
 [node name="DialogueSignalHandler" parent="." node_paths=PackedStringArray("dialogue") instance=ExtResource("9_34u8w")]
 dialogue = NodePath("../Control/CharacterDialogue")
 
+[node name="Motor" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_qhvcv")
+
 [connection signal="pressed" from="Control/RonSwanson" to="." method="_on_ron_swanson_pressed"]
 [connection signal="dialogue_signal" from="Control/CharacterDialogue" to="." method="_on_character_dialogue_dialogue_signal"]
 
+[editable path="Control/Fade"]
 [editable path="Control/Transition2"]
 [editable path="Control/Transition"]
