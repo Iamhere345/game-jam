@@ -19,7 +19,7 @@ nodes = {
 "options": {
 0: {
 "condition": {},
-"link": "END",
+"link": &"1_4",
 "text": "one ticket please"
 }
 },
@@ -60,12 +60,12 @@ her eyes glisten, she takes it from you and slides it into her pocket*
 "options": {
 0: {
 "condition": {},
-"link": "END",
+"link": &"1_4",
 "text": "one ticket please"
 },
 1: {
 "condition": {},
-"link": "END",
+"link": &"4_1",
 "text": "could I offer you this premium watch instead?"
 }
 },
@@ -74,7 +74,7 @@ her eyes glisten, she takes it from you and slides it into her pocket*
 },
 "1_2": {
 "dialogue": "then you cant ride the plane!",
-"offset": Vector2(380, 80),
+"offset": Vector2(620, -120),
 "options": {
 0: {
 "condition": {},
@@ -214,7 +214,7 @@ oh theres gonna be hell to pay for this.",
 },
 "4_1": {
 "link": &"1_3",
-"offset": Vector2(760, 60),
+"offset": Vector2(1080, -200),
 "type": 0,
 "value": "",
 "variable": "watch"
