@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbi68tveugtqe"]
+[gd_scene load_steps=5 format=3 uid="uid://bbi68tveugtqe"]
 
 [ext_resource type="PackedScene" uid="uid://bpw4dktyc7ivf" path="res://Scenes/hud.tscn" id="1_sgte6"]
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_uapdg"]
 [ext_resource type="PackedScene" uid="uid://b3df1s867for3" path="res://Scenes/game_over.tscn" id="2_bajuw"]
+[ext_resource type="AudioStream" uid="uid://bn1lqm2akwv5d" path="res://Assets/Misc/themeantrain.wav" id="4_ctafk"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_uapdg")
@@ -16,3 +17,8 @@ mouse_filter = 1
 visible = false
 offset_right = 1920.0
 offset_bottom = 1080.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ctafk")
+volume_db = 18.0
+autoplay = true

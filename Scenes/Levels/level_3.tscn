@@ -4,11 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://gfv0hj1mwk5r" path="res://Assets/Backdrops/road.png" id="1_qpggs"]
 [ext_resource type="PackedScene" uid="uid://du3rn8dhpja28" path="res://Scenes/fade.tscn" id="2_hasq1"]
 [ext_resource type="Texture2D" uid="uid://b1gaqwsrto2aw" path="res://Assets/Transitions/train_transition.png" id="3_mnydi"]
+[ext_resource type="Texture2D" uid="uid://cekofgsauiwry" path="res://Assets/Characters/sign-export.png" id="5_dvjp6"]
 [ext_resource type="PackedScene" uid="uid://bomie30sx7gp8" path="res://Scenes/character_dialogue.tscn" id="5_v8rwa"]
-[ext_resource type="Texture2D" uid="uid://m1i8dkt30itd" path="res://Assets/Characters/bus_stop.png" id="6_njtuw"]
 [ext_resource type="Resource" uid="uid://crl2ety31hu51" path="res://Assets/Dialogue/roadside.tres" id="6_uv2cu"]
-[ext_resource type="Texture2D" uid="uid://bwj7a5xx5hbfa" path="res://Assets/Characters/Car.png" id="7_ol1xj"]
 [ext_resource type="Texture2D" uid="uid://c0r4wvnmq63gx" path="res://Assets/Characters/bus_transition.png" id="8_em5ua"]
+[ext_resource type="Texture2D" uid="uid://d3n2osu1p454o" path="res://Assets/Characters/ScarGO.png" id="9_57lts"]
 [ext_resource type="Texture2D" uid="uid://lh5xwbbcr11c" path="res://Assets/Transitions/nycityintro.png" id="10_vwo2b"]
 
 [node name="Roadside" type="Node2D"]
@@ -42,11 +42,11 @@ texture = ExtResource("3_mnydi")
 
 [node name="BusStop" type="TextureButton" parent="Control"]
 layout_mode = 0
-offset_left = 1006.0
-offset_top = 702.0
-offset_right = 1175.0
-offset_bottom = 810.0
-texture_normal = ExtResource("6_njtuw")
+offset_left = 1376.0
+offset_top = 423.0
+offset_right = 1480.0
+offset_bottom = 1063.0
+texture_normal = ExtResource("5_dvjp6")
 
 [node name="CharacterDialogue" parent="Control" instance=ExtResource("5_v8rwa")]
 layout_mode = 1
@@ -76,12 +76,12 @@ layout_mode = 1
 
 [node name="Car" type="TextureButton" parent="Control"]
 layout_mode = 0
-offset_left = 510.0
-offset_top = 628.0
-offset_right = 730.0
-offset_bottom = 812.0
+offset_left = 493.0
+offset_top = 610.0
+offset_right = 812.0
+offset_bottom = 871.0
 scale = Vector2(0.8, 0.8)
-texture_normal = ExtResource("7_ol1xj")
+texture_normal = ExtResource("9_57lts")
 flip_h = true
 
 [node name="NYCFade" parent="Control" instance=ExtResource("2_hasq1")]
