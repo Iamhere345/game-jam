@@ -14,48 +14,373 @@ nodes = {
 "start_id": "Zac"
 },
 "1_1": {
-"dialogue": "I'm Zac!",
-"offset": Vector2(-260, -240),
+"dialogue": "*the man at the counter scans you and scowls, a deep seated resentment rests in his eyes*",
+"offset": Vector2(100, -240),
 "options": {
 0: {
 "condition": {},
 "link": &"1_2",
-"text": "Hi Zac!"
+"text": "ticket!"
 },
 1: {
 "condition": {},
+"link": &"1_6",
+"text": "could I please get one ticket"
+},
+2: {
+"condition": {},
 "link": &"1_3",
-"text": "*Silence*"
+"text": "whats your name?"
 }
 },
-"size": Vector2(320, 289),
+"size": Vector2(300, 322),
 "speaker": "Zac"
 },
-"1_2": {
-"dialogue": "Wanna ticket?",
-"offset": Vector2(640, -320),
+"1_10": {
+"dialogue": "the train pulls into to the station kicking up dust all around, you see two carts you could pheasably get into.",
+"offset": Vector2(2780, 460),
 "options": {
 0: {
 "condition": {},
-"link": &"3_2",
-"text": "Yes please (-$70)"
+"link": &"1_12",
+"text": "red passenger cart"
 },
 1: {
 "condition": {},
-"link": &"1_4",
-"text": "ME A DISCOUNT! DIVORCE! I GOT DIVORCE!"
+"link": &"1_13",
+"text": "navy blue storage cart"
+}
+},
+"size": Vector2(300, 289),
+"speaker": "_"
+},
+"1_11": {
+"dialogue": "yeah haha, I was just joking, uh, its uhm it'll be fifteen dollars a ticket
+*now you're sure there was some hope left in his eyes, as you just saw him lose it*",
+"offset": Vector2(1120, 1240),
+"options": {
+0: {
+"condition": {},
+"link": &"3_5",
+"text": "buy the ticket"
+}
+},
+"size": Vector2(300, 256),
+"speaker": "Zac"
+},
+"1_12": {
+"dialogue": "you hop into the passenger cart, and cosy up by a window seat, its peacful, quiet.
+the carriage door slides open and the conductor walks down the aisle, he asks for a ticket and subsquently kicks you out.",
+"offset": Vector2(3160, 560),
+"options": {
+0: {
+"condition": {},
+"link": &"3_6",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": "_"
+},
+"1_13": {
+"dialogue": "you enter the container and its stocked with boxes and boxes of mangoes.",
+"offset": Vector2(3200, 860),
+"options": {
+0: {
+"condition": {},
+"link": &"3_7",
+"text": "take one"
+},
+1: {
+"condition": {},
+"link": &"1_14",
+"text": "dont take one"
+}
+},
+"size": Vector2(300, 289),
+"speaker": "_"
+},
+"1_14": {
+"dialogue": "the train takes off",
+"offset": Vector2(4200, 780),
+"options": {
+0: {
+"condition": {},
+"link": &"3_1",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": "_"
+},
+"1_15": {
+"dialogue": "Are you threatening me?!, I'm gonna call the police.",
+"offset": Vector2(2080, 820),
+"options": {
+0: {
+"condition": {},
+"link": &"3_8",
+"text": "go on, call them, they won't get here on time!"
+},
+1: {
+"condition": {},
+"link": &"1_16",
+"text": "woah woah woah, don't be hasty, look give me the ticket for 50 bucks, and a there will be a playstation sitting under your tree next christmas"
+}
+},
+"size": Vector2(480, 256),
+"speaker": "Zac"
+},
+"1_16": {
+"dialogue": "*zac sits up straight*
+for real?",
+"offset": Vector2(2160, 1280),
+"options": {
+0: {
+"condition": {},
+"link": &"1_17",
+"text": "yeah one hundred percent"
+}
+},
+"size": Vector2(300, 256),
+"speaker": "Zac"
+},
+"1_17": {
+"dialogue": "alright then",
+"offset": Vector2(2560, 1220),
+"options": {
+0: {
+"condition": {},
+"link": &"3_9",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": "Zac"
+},
+"1_18": {
+"dialogue": "yeah right, why should I believe you?",
+"offset": Vector2(2440, 20),
+"options": {
+0: {
+"condition": {},
+"link": &"1_19",
+"text": "why do you think im even taking the train, I've got no reindeers, I didnt need them, so how about fifteen for the tickets"
+}
+},
+"size": Vector2(300, 256),
+"speaker": "Zac"
+},
+"1_19": {
+"dialogue": "one hundred and fifty for the ticket",
+"offset": Vector2(2980, -200),
+"options": {
+0: {
+"condition": {},
+"link": &"1_20",
+"text": "fifteen my final offer"
+},
+1: {
+"condition": {},
+"link": &"3_10",
+"text": "take it"
+},
+2: {
+"condition": {},
+"link": &"1_21",
+"text": "fifty"
+},
+3: {
+"condition": {},
+"link": &"1_21",
+"text": "seventy five"
+}
+},
+"size": Vector2(300, 322),
+"speaker": "Zac"
+},
+"1_2": {
+"dialogue": "that'll be 200 dollars",
+"offset": Vector2(560, -480),
+"options": {
+0: {
+"condition": {},
+"link": &"1_26",
+"text": "Me a discount?"
+},
+1: {
+"condition": {},
+"link": &"1_7",
+"text": "what! thats ridiculous"
+},
+2: {
+"condition": {},
+"link": &"3_2",
+"text": "alright"
+}
+},
+"size": Vector2(300, 322),
+"speaker": "Zac"
+},
+"1_20": {
+"dialogue": "psh one hudred and fifty take it or leave it",
+"offset": Vector2(3380, -260),
+"options": {
+0: {
+"condition": {},
+"link": &"3_10",
+"text": "take it "
+},
+1: {
+"condition": {},
+"link": &"1_28",
+"text": "leave it"
 }
 },
 "size": Vector2(300, 289),
 "speaker": "Zac"
 },
-"1_3": {
-"dialogue": "*Silence*",
-"offset": Vector2(220, -20),
+"1_21": {
+"dialogue": "one hundred and twenty",
+"offset": Vector2(3680, 60),
 "options": {
 0: {
 "condition": {},
-"link": &"1_2",
+"link": &"1_23",
+"text": "one hundred"
+},
+1: {
+"condition": {},
+"link": &"1_22",
+"text": "ninety"
+},
+2: {
+"condition": {},
+"link": &"1_24",
+"text": "eighty"
+},
+3: {
+"condition": {},
+"link": &"1_25",
+"text": "sixty"
+}
+},
+"size": Vector2(300, 322),
+"speaker": "Zac"
+},
+"1_22": {
+"dialogue": "deal.",
+"offset": Vector2(4100, 0),
+"options": {
+0: {
+"condition": {},
+"link": &"3_12",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": "Zac"
+},
+"1_23": {
+"dialogue": "deal.",
+"offset": Vector2(4120, -140),
+"options": {
+0: {
+"condition": {},
+"link": &"3_11",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": "Zax"
+},
+"1_24": {
+"dialogue": "deal.",
+"offset": Vector2(4060, 120),
+"options": {
+0: {
+"condition": {},
+"link": &"3_13",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": "Zac"
+},
+"1_25": {
+"dialogue": "psh one hundred and ten final offer",
+"offset": Vector2(4120, 420),
+"options": {
+0: {
+"condition": {},
+"link": &"3_14",
+"text": "deal"
+},
+1: {
+"condition": {},
+"link": &"1_28",
+"text": "leave it"
+}
+},
+"size": Vector2(300, 289),
+"speaker": "Zax"
+},
+"1_26": {
+"dialogue": "huh?",
+"offset": Vector2(1180, -400),
+"options": {
+0: {
+"condition": {},
+"link": &"1_27",
+"text": "GIVE ME A DISCOUNT"
+}
+},
+"size": Vector2(300, 256),
+"speaker": "Zac"
+},
+"1_27": {
+"dialogue": "uhh yeah uh, sure",
+"offset": Vector2(1544.01, -305.027),
+"options": {
+0: {
+"condition": {},
+"link": &"1_19",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": "Zac"
+},
+"1_28": {
+"dialogue": "you leave the station, you here the train whistle as the train pulls in, if you ran it looks theres two carriages you could get onto.",
+"offset": Vector2(3820, 1060),
+"options": {
+0: {
+"condition": {},
+"link": &"3_6",
+"text": "dont get on the train"
+},
+1: {
+"condition": {},
+"link": &"1_12",
+"text": "hop on the red passanger cart"
+},
+2: {
+"condition": {},
+"link": &"1_13",
+"text": "hop on the blue storage cart"
+}
+},
+"size": Vector2(300, 322),
+"speaker": "_"
+},
+"1_3": {
+"dialogue": "Im zac!",
+"offset": Vector2(100, 160),
+"options": {
+0: {
+"condition": {},
+"link": &"1_1",
 "text": ""
 }
 },
@@ -63,50 +388,194 @@ nodes = {
 "speaker": "Zac"
 },
 "1_4": {
-"dialogue": "Let me speak to my manager about that.",
-"offset": Vector2(1260, -280),
+"dialogue": "the train pulls into the station",
+"offset": Vector2(1640, -840),
 "options": {
 0: {
 "condition": {},
 "link": &"3_1",
-"text": "Ok"
+"text": "ride train"
 }
 },
-"size": Vector2(300, 240),
-"speaker": "Zac"
+"size": Vector2(300, 256),
+"speaker": "_"
 },
 "1_5": {
-"dialogue": "Ok, my manager says I can sell you the ticket for $30 instead",
-"offset": Vector2(1980, -340),
+"dialogue": "You dont know me, but I know you, decmber 25 2000, you failed me, with joy in my hear and hope in my eyes 
+I skip to the christmas tree, and I tear open present after present, only to find you had ignored all of my mail, and neglected to give me a playstation 2",
+"offset": Vector2(1340, 160),
 "options": {
 0: {
 "condition": {},
-"link": &"3_3",
-"text": "Thanks! (-$30)"
+"link": &"1_8",
+"text": "..."
 },
 1: {
 "condition": {},
-"link": "END",
-"text": "Thats still too expensive"
+"link": &"1_18",
+"text": "Look I stopped doing presents hundreds of years ago, in one night you can hit like eighty houses tops"
+},
+2: {
+"condition": {},
+"link": &"1_15",
+"text": "and you'll be lucky to see another christmas  if you dont give me a ticket"
+},
+3: {
+"condition": {},
+"link": &"1_11",
+"text": "you know santa isnt real?, your parents give you your presents"
+}
+},
+"size": Vector2(640, 400),
+"speaker": "Zac"
+},
+"1_6": {
+"dialogue": "that'll be 200 dollars",
+"offset": Vector2(560, -120),
+"options": {
+0: {
+"condition": {},
+"link": &"3_2",
+"text": "alright"
+},
+1: {
+"condition": {},
+"link": &"1_7",
+"text": "what! thats ridiculous"
 }
 },
 "size": Vector2(300, 289),
 "speaker": "Zac"
 },
-"3_1": {
+"1_7": {
+"dialogue": "well thats the price.",
+"offset": Vector2(980, 160),
+"options": {
+0: {
+"condition": {},
 "link": &"1_5",
-"offset": Vector2(1680, -340),
-"signalValue": "sub_time 40"
+"text": "do I know you?, the sign say tickets are fifteen a piece?"
+},
+1: {
+"condition": {},
+"link": &"3_2",
+"text": "fine"
+},
+2: {
+"condition": {},
+"link": &"1_5",
+"text": "who are you?,whats your problem?!"
+}
+},
+"size": Vector2(300, 322),
+"speaker": "Zac"
+},
+"1_8": {
+"dialogue": "yeah thats what I thought!
+the tickets are 300 dollars now",
+"offset": Vector2(1960, -100),
+"options": {
+0: {
+"condition": {},
+"link": &"3_3",
+"text": "... ( pay the 300)"
+},
+1: {
+"condition": {},
+"link": &"1_9",
+"text": "go outside and reflect"
+}
+},
+"size": Vector2(300, 289),
+"speaker": "Zac"
+},
+"1_9": {
+"dialogue": "the crisp canadadian air fills your lungs, you really did stop giving out gifts, but its to late to argue that, you look over the tracks, you might be able to sneak onto the train.",
+"offset": Vector2(2260, 480),
+"options": {
+0: {
+"condition": {},
+"link": &"1_10",
+"text": "try to climb into the train when no ones looking"
+},
+1: {
+"condition": {},
+"link": &"3_3",
+"text": "go back in and pay"
+}
+},
+"size": Vector2(300, 289),
+"speaker": "_"
+},
+"3_1": {
+"link": &"3_4",
+"offset": Vector2(2260, -620),
+"signalValue": "sub_time 60"
+},
+"3_10": {
+"link": &"1_4",
+"offset": Vector2(1060, -600),
+"signalValue": "sub_cash 150"
+},
+"3_11": {
+"link": &"1_4",
+"offset": Vector2(4460, 60),
+"signalValue": "sub_cash 100"
+},
+"3_12": {
+"link": &"1_4",
+"offset": Vector2(4440, 200),
+"signalValue": "sub_cash 90"
+},
+"3_13": {
+"link": &"1_4",
+"offset": Vector2(4400, 320),
+"signalValue": "sub_cash 80"
+},
+"3_14": {
+"link": &"1_4",
+"offset": Vector2(4458.57, 502.028),
+"signalValue": "sub_cash 110"
 },
 "3_2": {
-"link": "END",
-"offset": Vector2(1040, -320),
-"signalValue": "sub_cash 70"
+"link": &"1_4",
+"offset": Vector2(980, -260),
+"signalValue": "sub_cash 200"
 },
 "3_3": {
+"link": &"1_4",
+"offset": Vector2(1140, -80),
+"signalValue": "sub_cash 300"
+},
+"3_4": {
 "link": "END",
-"offset": Vector2(2440.83, -213.997),
-"signalValue": "sub_cash 30"
+"offset": Vector2(2600, -600),
+"signalValue": "next_level"
+},
+"3_5": {
+"link": &"1_4",
+"offset": Vector2(1720, 1320),
+"signalValue": "sub_cash 15"
+},
+"3_6": {
+"link": "END",
+"offset": Vector2(3560, 700),
+"signalValue": "game_over you miss the boat to the south pole and spend the rest of your days living in canada."
+},
+"3_7": {
+"link": &"1_14",
+"offset": Vector2(3600, 800),
+"signalValue": "mango"
+},
+"3_8": {
+"link": "END",
+"offset": Vector2(2780, 940),
+"signalValue": "game_over they did, infact get here on time, santa goes to jail."
+},
+"3_9": {
+"link": &"1_4",
+"offset": Vector2(2940, 1420),
+"signalValue": "sub_cash 50"
 }
 }
 variables = {}

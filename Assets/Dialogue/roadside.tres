@@ -1,0 +1,76 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://crl2ety31hu51"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_ff0g1"]
+
+[resource]
+script = ExtResource("1_ff0g1")
+starts = {
+"BusStop": &"0_1",
+"Car": &"0_2"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(-460, -340),
+"start_id": "BusStop"
+},
+"0_2": {
+"link": &"1_2",
+"offset": Vector2(-550.72, 54.25),
+"start_id": "Car"
+},
+"1_1": {
+"dialogue": "Catch the bus to new york?",
+"offset": Vector2(-140, -340),
+"options": {
+0: {
+"condition": {},
+"link": &"3_3",
+"text": "Yes (-$115)"
+},
+1: {
+"condition": {},
+"link": "END",
+"text": "No"
+}
+},
+"size": Vector2(300, 256),
+"speaker": "_"
+},
+"1_2": {
+"dialogue": "Hitchhike to new york?",
+"offset": Vector2(-140, 60),
+"options": {
+0: {
+"condition": {},
+"link": &"3_2",
+"text": "Yes (-$0)"
+},
+1: {
+"condition": {},
+"link": "END",
+"text": "No"
+}
+},
+"size": Vector2(300, 256),
+"speaker": "_"
+},
+"3_1": {
+"link": "END",
+"offset": Vector2(680, -300),
+"signalValue": "catch_bus"
+},
+"3_2": {
+"link": "END",
+"offset": Vector2(360, 80),
+"signalValue": "catch_car"
+},
+"3_3": {
+"link": &"3_1",
+"offset": Vector2(351.137, -292.389),
+"signalValue": "sub_cash 115"
+}
+}
+variables = {}
+strays = Array[String]([])
+characters = ""

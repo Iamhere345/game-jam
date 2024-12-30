@@ -9,8 +9,10 @@ func _ready() -> void:
 func on_signal(value: String):
 	var cmd: String = value.split(" ")[0]
 	var arg: String
-	if value.split(" ").size() >= 1: 
+	if value.split(" ").size() > 1: 
 		arg = value.split(" ")[1]
+	
+	print("cmd: " + cmd + " arg: " + str(arg) or "null")
 	
 	match cmd:
 		'set_time':
@@ -24,6 +26,8 @@ func on_signal(value: String):
 		'sub_cash':
 			Globals.sub_cash.emit(int(arg))
 		'next_level':
+			print("next level")
 			Globals.prep_next_level.emit()
 		'game_over':
-			Globals.game_over.emit(value.split(" ", true, 1))
+			print("game over dialogue: ", value.split(" ", true, 1)[1])
+			Globals.game_over.emit(value.split(" ", true, 1)[1])

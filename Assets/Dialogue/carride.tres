@@ -1,0 +1,401 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://0hqrktnjyjx"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_ewbwe"]
+
+[resource]
+script = ExtResource("1_ewbwe")
+starts = {
+"Driver": &"0_1"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(-600, 40),
+"start_id": "Driver"
+},
+"1_1": {
+"dialogue": "...",
+"offset": Vector2(-320, -160),
+"options": {
+0: {
+"condition": {},
+"link": &"3_1",
+"text": "thanks for the lift"
+},
+1: {
+"condition": {},
+"link": &"3_2",
+"text": "..."
+}
+},
+"size": Vector2(300, 289),
+"speaker": "Driver"
+},
+"1_10": {
+"dialogue": "woah, thanks for the magnet you got me this year, super cool.",
+"offset": Vector2(1480, -160),
+"options": {
+0: {
+"condition": {},
+"link": &"1_13",
+"text": "you're welcome"
+},
+1: {
+"condition": {},
+"link": &"3_14",
+"text": "I see you're on your learners"
+}
+},
+"size": Vector2(300, 289),
+"speaker": "Driver"
+},
+"1_11": {
+"dialogue": "oh no, I'm not on my learners my sister is.",
+"offset": Vector2(2140, 60),
+"options": {
+0: {
+"condition": {},
+"link": &"1_12",
+"text": "... uhm cool"
+},
+1: {
+"condition": {},
+"link": &"1_14",
+"text": "please face the road!"
+}
+},
+"size": Vector2(300, 289),
+"speaker": "Driver"
+},
+"1_12": {
+"dialogue": "...",
+"offset": Vector2(2620, 60),
+"options": {
+0: {
+"condition": {},
+"link": &"1_13",
+"text": "..."
+}
+},
+"size": Vector2(300, 256),
+"speaker": "Driver"
+},
+"1_13": {
+"dialogue": "so is it hard delevring all those presents?",
+"offset": Vector2(2980, 20),
+"options": {
+0: {
+"condition": {},
+"link": &"3_15",
+"text": "Please look at the road"
+},
+1: {
+"condition": {},
+"link": &"3_5",
+"text": "uhh, yeah I guess its uhhh tough"
+}
+},
+"size": Vector2(300, 289),
+"speaker": "Driver"
+},
+"1_14": {
+"dialogue": "so is it tough?, deleving presents.",
+"offset": Vector2(3600, 60),
+"options": {
+0: {
+"condition": {},
+"link": &"1_15",
+"text": "yeah its pretty hard"
+},
+1: {
+"condition": {},
+"link": &"1_15",
+"text": "I mean im just sorta used to it so its not to tricky."
+}
+},
+"size": Vector2(300, 289),
+"speaker": "Driver"
+},
+"1_15": {
+"dialogue": "its so awesome that you're santa",
+"offset": Vector2(3940, 260),
+"options": {
+0: {
+"condition": {},
+"link": &"1_9",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": "Driver."
+},
+"1_16": {
+"dialogue": "are you santa?",
+"offset": Vector2(1000, -340),
+"options": {
+0: {
+"condition": {},
+"link": &"1_10",
+"text": "yeah"
+},
+1: {
+"condition": {},
+"link": &"3_4",
+"text": "no"
+}
+},
+"size": Vector2(300, 289),
+"speaker": "Driver"
+},
+"1_17": {
+"dialogue": "yeah thats why im in this T shirt right now",
+"offset": Vector2(3020, 1020),
+"options": {
+0: {
+"condition": {},
+"link": &"1_9",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": "Driver"
+},
+"1_18": {
+"dialogue": "...",
+"offset": Vector2(-380, 360),
+"options": {
+0: {
+"condition": {},
+"link": &"3_8",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": "Driver"
+},
+"1_19": {
+"dialogue": "...",
+"offset": Vector2(220, 540),
+"options": {
+0: {
+"condition": {},
+"link": &"3_10",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": "Driver"
+},
+"1_2": {
+"dialogue": "yeah no problem",
+"offset": Vector2(320, -200),
+"options": {
+0: {
+"condition": {},
+"link": &"1_16",
+"text": "..."
+},
+1: {
+"condition": {},
+"link": &"3_3",
+"text": "hey can you look at the road"
+}
+},
+"size": Vector2(300, 289),
+"speaker": "Driver "
+},
+"1_3": {
+"dialogue": "Yeah of course, so are you THE santa claus?",
+"offset": Vector2(960, -20),
+"options": {
+0: {
+"condition": {},
+"link": &"3_4",
+"text": "no"
+},
+1: {
+"condition": {},
+"link": &"1_10",
+"text": "yeah  I'm santa claus"
+}
+},
+"size": Vector2(300, 289),
+"speaker": "Driver"
+},
+"1_4": {
+"dialogue": "are you santa?",
+"offset": Vector2(200, 160),
+"options": {
+0: {
+"condition": {},
+"link": &"3_3",
+"text": "hey can you look at the road"
+},
+1: {
+"condition": {},
+"link": &"3_4",
+"text": "no"
+},
+2: {
+"condition": {},
+"link": "END",
+"text": "yeah thats me"
+}
+},
+"size": Vector2(300, 322),
+"speaker": "Driver"
+},
+"1_5": {
+"dialogue": "alright, why are dressed like santa then, its the 27th",
+"offset": Vector2(1620, 300),
+"options": {
+0: {
+"condition": {},
+"link": &"3_6",
+"text": "Please face the road"
+},
+1: {
+"condition": {},
+"link": &"3_5",
+"text": "uhh"
+},
+2: {
+"condition": {},
+"link": &"3_5",
+"text": "I'm a hobbyist"
+}
+},
+"size": Vector2(300, 322),
+"speaker": "driver"
+},
+"1_6": {
+"dialogue": "so",
+"offset": Vector2(2300, 400),
+"options": {
+0: {
+"condition": {},
+"link": &"1_17",
+"text": "I didnt mean too, this was just in my closet"
+},
+1: {
+"condition": {},
+"link": &"3_11",
+"text": "Im a hobbyist"
+}
+},
+"size": Vector2(300, 289),
+"speaker": "Driver"
+},
+"1_7": {
+"dialogue": "Oh intresting, I suppose people do all sorts of thing",
+"offset": Vector2(2980, 440),
+"options": {
+0: {
+"condition": {},
+"link": &"3_5",
+"text": "yeah, I suppose so"
+},
+1: {
+"condition": {},
+"link": &"3_12",
+"text": "Look at the road!"
+}
+},
+"size": Vector2(300, 289),
+"speaker": "Driver"
+},
+"1_8": {
+"dialogue": "mhm yep, my bad",
+"offset": Vector2(3660, 540),
+"options": {
+0: {
+"condition": {},
+"link": &"1_9",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": "Driver"
+},
+"1_9": {
+"dialogue": "after a few hours you finally arive at new york",
+"offset": Vector2(4320, 620),
+"options": {
+0: {
+"condition": {},
+"link": &"3_13",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": "_"
+},
+"3_1": {
+"link": &"1_2",
+"offset": Vector2(40, -20),
+"signalValue": "back"
+},
+"3_10": {
+"link": &"1_4",
+"offset": Vector2(640, 560),
+"signalValue": "back"
+},
+"3_11": {
+"link": &"1_7",
+"offset": Vector2(2700, 600),
+"signalValue": "back"
+},
+"3_12": {
+"link": &"1_8",
+"offset": Vector2(3380, 700),
+"signalValue": "forward"
+},
+"3_13": {
+"link": "END",
+"offset": Vector2(4680, 780),
+"signalValue": "next_level"
+},
+"3_14": {
+"link": &"1_11",
+"offset": Vector2(1820, 40),
+"signalValue": "back"
+},
+"3_15": {
+"link": &"1_14",
+"offset": Vector2(3360, 20),
+"signalValue": "forward"
+},
+"3_2": {
+"link": &"1_18",
+"offset": Vector2(-620, 300),
+"signalValue": "back"
+},
+"3_3": {
+"link": &"1_3",
+"offset": Vector2(700, 100),
+"signalValue": "forward"
+},
+"3_4": {
+"link": &"1_5",
+"offset": Vector2(1380, 300),
+"signalValue": "back"
+},
+"3_5": {
+"link": "END",
+"offset": Vector2(3680, 960),
+"signalValue": "game_over the driver wasn't looking at the road and veered of the road"
+},
+"3_6": {
+"link": &"1_6",
+"offset": Vector2(2040, 360),
+"signalValue": "forward"
+},
+"3_8": {
+"link": &"1_19",
+"offset": Vector2(-40, 560),
+"signalValue": "forward"
+}
+}
+variables = {}
+strays = Array[String]([])
+characters = ""

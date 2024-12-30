@@ -10,21 +10,175 @@ starts = {
 nodes = {
 "0_1": {
 "link": &"1_1",
-"offset": Vector2(-117.093, -58.6861),
+"offset": Vector2(-100, 80),
 "start_id": "Ron"
 },
 "1_1": {
-"dialogue": "Ron Swanson",
-"offset": Vector2(200, -100),
+"dialogue": "hey nick, we'll be ready in a bit",
+"offset": Vector2(200, 80),
 "options": {
 0: {
 "condition": {},
-"link": "END",
-"text": "OK"
+"link": &"1_2",
+"text": "Ok"
 }
 },
-"size": Vector2(300, 240),
-"speaker": "Ron Swanson"
+"size": Vector2(300, 256),
+"speaker": "Jon Jwonson"
+},
+"1_2": {
+"dialogue": "so how've things been with you",
+"offset": Vector2(620, 60),
+"options": {
+0: {
+"condition": {},
+"link": &"1_3",
+"text": "alright"
+},
+1: {
+"condition": {},
+"link": &"1_7",
+"text": "good, how about you?"
+},
+2: {
+"condition": {},
+"link": &"1_9",
+"text": "good, how are your kids?"
+}
+},
+"size": Vector2(300, 322),
+"speaker": "Jon Jwason"
+},
+"1_3": {
+"dialogue": "cool, cool ,cool, hey uh can I show you something?",
+"offset": Vector2(1040, -280),
+"options": {
+0: {
+"condition": {},
+"link": &"1_4",
+"text": "can we go now?!"
+},
+1: {
+"condition": {},
+"link": &"1_5",
+"text": "yeah sure"
+}
+},
+"size": Vector2(300, 289),
+"speaker": "Jon Jwason"
+},
+"1_4": {
+"dialogue": "ALL ABOARD!",
+"offset": Vector2(2760, -60),
+"options": {
+0: {
+"condition": {},
+"link": &"3_1",
+"text": "*board the ship*"
+}
+},
+"size": Vector2(300, 256),
+"speaker": "Jon Jwason"
+},
+"1_5": {
+"dialogue": "this is an antique golden watch, its valued up to a thousand dollars with the right collectors, but I gotta get something for jimothy's birthday and I wont have time to go to the bank once I get home. So I'll cut you deal and give it to you for one hundred dollars.",
+"offset": Vector2(1700, 0),
+"options": {
+0: {
+"condition": {},
+"link": &"1_6",
+"text": "nah sorry"
+},
+1: {
+"condition": {},
+"link": &"3_2",
+"text": "yeah sure"
+}
+},
+"size": Vector2(300, 289),
+"speaker": "Jon Jwason"
+},
+"1_6": {
+"dialogue": "allright looks like the boats ready",
+"offset": Vector2(2440, 260),
+"options": {
+0: {
+"condition": {},
+"link": &"1_4",
+"text": "alright"
+}
+},
+"size": Vector2(300, 256),
+"speaker": "Jon Jwanson"
+},
+"1_7": {
+"dialogue": "Yeah I've been alright, buisness is slow as always, and I'm retiring soon so I'll have more time to spend with the kids.",
+"offset": Vector2(980, 220),
+"options": {
+0: {
+"condition": {},
+"link": &"1_8",
+"text": "good, good"
+},
+1: {
+"condition": {},
+"link": &"1_9",
+"text": "how are they going?"
+}
+},
+"size": Vector2(300, 300),
+"speaker": "Jon Jwanson"
+},
+"1_8": {
+"dialogue": "hey can I intrest you in something?",
+"offset": Vector2(1320, 280),
+"options": {
+0: {
+"condition": {},
+"link": &"1_5",
+"text": "whats up"
+},
+1: {
+"condition": {},
+"link": &"1_6",
+"text": "no"
+}
+},
+"size": Vector2(300, 289),
+"speaker": "Jon Jwason"
+},
+"1_9": {
+"dialogue": "Oh they're doing great!, Jimothy is playing in division one basketball and markus just got hired as a doctor!, they make me so proud!",
+"offset": Vector2(1353.34, 777.964),
+"options": {
+0: {
+"condition": {},
+"link": &"1_6",
+"text": "good for them!"
+}
+},
+"size": Vector2(300, 256),
+"speaker": "Jon Jwason"
+},
+"3_1": {
+"link": &"3_3",
+"offset": Vector2(3140, 100),
+"signalValue": "next_level"
+},
+"3_2": {
+"link": &"3_4",
+"offset": Vector2(2140, 120),
+"signalValue": "sub_cash 100"
+},
+"3_3": {
+"link": "END",
+"offset": Vector2(3410.66, 108.69),
+"signalValue": "sub_time 60"
+},
+"3_4": {
+"link": &"1_6",
+"offset": Vector2(2376.2, 121.4),
+"signalValue": "gold_watch"
 }
 }
 variables = {}

@@ -1,0 +1,232 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://yk148wn2onig"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_6vuol"]
+
+[resource]
+script = ExtResource("1_6vuol")
+starts = {
+"Pilot": &"0_1"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(-640, 0),
+"start_id": "Pilot"
+},
+"1_1": {
+"dialogue": "Welcome aboard, today we'll be flying from New york city, to Hobart Australia! Tickets are two hundred dollars.",
+"offset": Vector2(-420, -60),
+"options": {
+0: {
+"condition": {},
+"link": &"1_4",
+"text": "one ticket please"
+},
+1: {
+"condition": {},
+"link": &"5_1",
+"text": "uhm I dont have enough"
+}
+},
+"size": Vector2(300, 289),
+"speaker": "Pilot"
+},
+"1_10": {
+"dialogue": "*The pilot glances at the watch
+her eyes glisten, she takes it from you and slides it into her pocket*
+\"enjoy your trip\"",
+"offset": Vector2(4120, -200),
+"options": {
+0: {
+"condition": {},
+"link": &"3_2",
+"text": ""
+}
+},
+"size": Vector2(340, 280),
+"speaker": "_"
+},
+"1_2": {
+"dialogue": "then you cant ride the plane!",
+"offset": Vector2(380, 80),
+"options": {
+0: {
+"condition": {},
+"link": &"3_5",
+"text": "could I offer you this premium watch instead?"
+}
+},
+"size": Vector2(300, 260),
+"speaker": "Pilot"
+},
+"1_3": {
+"dialogue": "*she peers down at the watch, her eyes glisten, 
+she takes it from you and slides it into her pocket*",
+"offset": Vector2(1080, 100),
+"options": {
+0: {
+"condition": {},
+"link": &"1_4",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": "_"
+},
+"1_4": {
+"dialogue": "Enjoy your flight!",
+"offset": Vector2(1420, -40),
+"options": {
+0: {
+"condition": {},
+"link": &"5_2",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": "Pilot"
+},
+"1_5": {
+"dialogue": "then you can't ride the plane!",
+"offset": Vector2(360, 400),
+"options": {
+0: {
+"condition": {},
+"link": &"3_1",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": "Pilot"
+},
+"1_6": {
+"dialogue": "*sniff sniff* 
+",
+"offset": Vector2(2200, -100),
+"options": {
+0: {
+"condition": {},
+"link": &"1_7",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": "Pilot"
+},
+"1_7": {
+"dialogue": "*the pilot marches up to you and pulls the mango out of your pocket*",
+"offset": Vector2(2580, -100),
+"options": {
+0: {
+"condition": {},
+"link": &"5_3",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": "_"
+},
+"1_8": {
+"dialogue": "WHAT IS THIS?!
+this was not declared at bagging!
+oh theres gonna be hell to pay for this.",
+"offset": Vector2(3280, 80),
+"options": {
+0: {
+"condition": {},
+"link": &"3_4",
+"text": ""
+}
+},
+"size": Vector2(300, 240),
+"speaker": "Pilot"
+},
+"1_9": {
+"dialogue": "WHAT IS THIS?!
+this was not declared at bagging!
+oh theres gonna be hell to pay for this.",
+"offset": Vector2(3340, -220),
+"options": {
+0: {
+"condition": {},
+"link": &"3_6",
+"text": "Wait! please let me give you this watch, and you just let this Mango thing slide."
+}
+},
+"size": Vector2(300, 256),
+"speaker": "Pilot"
+},
+"3_1": {
+"link": "END",
+"offset": Vector2(709.039, 626.584),
+"signalValue": "game_over santa couldnt afford the plane ticket and spent the rest of his day wandering time square"
+},
+"3_2": {
+"link": &"3_3",
+"offset": Vector2(2580, 400),
+"signalValue": "sub_time 240"
+},
+"3_3": {
+"link": "END",
+"offset": Vector2(2940, 400),
+"signalValue": "next_level"
+},
+"3_4": {
+"link": "END",
+"offset": Vector2(3673.48, 217.71),
+"signalValue": "game_over and hell to pay there was"
+},
+"3_5": {
+"link": &"4_1",
+"offset": Vector2(740, 220),
+"signalValue": "remove_watch"
+},
+"3_6": {
+"link": &"1_10",
+"offset": Vector2(3740, -200),
+"signalValue": "remove_watch"
+},
+"4_1": {
+"link": &"1_3",
+"offset": Vector2(760, 60),
+"type": 0,
+"value": "",
+"variable": "watch"
+},
+"5_1": {
+"false": &"1_5",
+"offset": Vector2(-40, 120),
+"operator": 0,
+"true": &"1_2",
+"value1": "{{watch}}",
+"value2": "true"
+},
+"5_2": {
+"false": &"3_2",
+"offset": Vector2(1800, 120),
+"operator": 0,
+"true": &"1_6",
+"value1": "{{mango}}",
+"value2": "true"
+},
+"5_3": {
+"false": &"1_8",
+"offset": Vector2(2940, -80),
+"operator": 0,
+"true": &"1_9",
+"value1": "watch",
+"value2": "true"
+}
+}
+variables = {
+"mango": {
+"type": 1,
+"value": false
+},
+"watch": {
+"type": 1,
+"value": false
+}
+}
+strays = Array[String]([])
+characters = ""

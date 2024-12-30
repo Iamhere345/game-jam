@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=3 uid="uid://cjnoip867myb5"]
+
+[ext_resource type="Script" path="res://Scripts/Level_Scripts/level_4.gd" id="1_jf525"]
+[ext_resource type="Texture2D" uid="uid://duxypsttub06y" path="res://Assets/Backdrops/car_interior.png" id="1_u7ash"]
+[ext_resource type="Texture2D" uid="uid://dm4uhx0arhpe3" path="res://Assets/Characters/driver.png" id="2_c4m5n"]
+[ext_resource type="PackedScene" uid="uid://baak44k6wiejb" path="res://Scenes/text_popup.tscn" id="3_6ov1x"]
+[ext_resource type="Texture2D" uid="uid://b26iy3jmxid7" path="res://Assets/Misc/Lplate.png" id="4_35e0v"]
+[ext_resource type="PackedScene" uid="uid://bomie30sx7gp8" path="res://Scenes/character_dialogue.tscn" id="6_edfmf"]
+[ext_resource type="Resource" uid="uid://0hqrktnjyjx" path="res://Assets/Dialogue/carride.tres" id="7_ef0sa"]
+[ext_resource type="PackedScene" uid="uid://du3rn8dhpja28" path="res://Scenes/fade.tscn" id="8_wvuba"]
+[ext_resource type="Texture2D" uid="uid://lh5xwbbcr11c" path="res://Assets/Transitions/nycityintro.png" id="9_17qam"]
+[ext_resource type="PackedScene" uid="uid://chnteigshnd7x" path="res://Scenes/dialogue_signal_handler.tscn" id="10_bf23i"]
+
+[node name="Car" type="Node2D"]
+script = ExtResource("1_jf525")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_u7ash")
+
+[node name="Driver" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 1048.0
+offset_top = 240.0
+offset_right = 1548.0
+offset_bottom = 670.0
+texture_normal = ExtResource("2_c4m5n")
+
+[node name="TextPopup" parent="Control" instance=ExtResource("3_6ov1x")]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 104.0
+offset_right = 360.0
+offset_bottom = 144.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("4_35e0v")
+
+[node name="Label" parent="Control/TextPopup/Panel" index="0"]
+text = "Uh oh"
+
+[node name="CharacterDialogue" parent="Control" instance=ExtResource("6_edfmf")]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+offset_left = 320.0
+offset_top = -240.0
+offset_right = -320.0
+data = ExtResource("7_ef0sa")
+start_id = "Zac"
+options_vertical = true
+
+[node name="Fade" parent="Control" instance=ExtResource("8_wvuba")]
+visible = false
+layout_mode = 1
+show_next = true
+
+[node name="TextureRect" parent="Control/Fade" index="0"]
+texture = ExtResource("9_17qam")
+
+[node name="DialogueSignalHandler" parent="." node_paths=PackedStringArray("dialogue") instance=ExtResource("10_bf23i")]
+dialogue = NodePath("../Control/CharacterDialogue")
+
+[connection signal="pressed" from="Control/Driver" to="." method="_on_driver_pressed"]
+[connection signal="dialogue_signal" from="Control/CharacterDialogue" to="." method="_on_character_dialogue_dialogue_signal"]
+
+[editable path="Control/TextPopup"]
+[editable path="Control/Fade"]

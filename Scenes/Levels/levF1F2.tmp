@@ -28,6 +28,20 @@ grow_vertical = 2
 visible = false
 layout_mode = 1
 
+[node name="Transition" parent="Control" instance=ExtResource("8_jwdou")]
+visible = false
+layout_mode = 1
+
+[node name="TextureRect" parent="Control/Transition" index="0"]
+texture = ExtResource("4_hkn1l")
+
+[node name="Transition2" parent="Control" instance=ExtResource("8_jwdou")]
+visible = false
+layout_mode = 1
+
+[node name="TextureRect" parent="Control/Transition2" index="0"]
+texture = ExtResource("4_1g4um")
+
 [node name="Background" type="TextureRect" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
@@ -36,6 +50,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_yv7tx")
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 690.0
+offset_top = 319.0
+offset_right = 698.0
+offset_bottom = 327.0
+text = "CLICK ME
+"
 
 [node name="RonSwanson" type="TextureButton" parent="Control"]
 layout_mode = 0
@@ -58,28 +81,11 @@ offset_top = -240.0
 offset_right = -480.0
 data = ExtResource("5_12yxj")
 
-[node name="Transition2" parent="Control" instance=ExtResource("8_jwdou")]
-visible = false
-z_index = 10
-layout_mode = 1
-show_next = true
-
-[node name="TextureRect" parent="Control/Transition2" index="0"]
-texture = ExtResource("4_1g4um")
-
-[node name="Transition" parent="Control" instance=ExtResource("8_jwdou")]
-visible = false
-layout_mode = 1
-show_next = true
-
-[node name="TextureRect" parent="Control/Transition" index="0"]
-texture = ExtResource("4_hkn1l")
-
 [node name="DialogueSignalHandler" parent="." node_paths=PackedStringArray("dialogue") instance=ExtResource("9_34u8w")]
 dialogue = NodePath("../Control/CharacterDialogue")
 
+[connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_pressed"]
 [connection signal="pressed" from="Control/RonSwanson" to="." method="_on_ron_swanson_pressed"]
-[connection signal="dialogue_signal" from="Control/CharacterDialogue" to="." method="_on_character_dialogue_dialogue_signal"]
 
-[editable path="Control/Transition2"]
 [editable path="Control/Transition"]
+[editable path="Control/Transition2"]

@@ -1,11 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://bbi68tveugtqe"]
+[gd_scene load_steps=4 format=3 uid="uid://bbi68tveugtqe"]
 
 [ext_resource type="PackedScene" uid="uid://bpw4dktyc7ivf" path="res://Scenes/hud.tscn" id="1_sgte6"]
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_uapdg"]
+[ext_resource type="PackedScene" uid="uid://b3df1s867for3" path="res://Scenes/game_over.tscn" id="2_bajuw"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_uapdg")
 
 [node name="Hud" parent="." instance=ExtResource("1_sgte6")]
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 1
+
+[node name="GameOver" parent="." instance=ExtResource("2_bajuw")]
+visible = false
 offset_right = 1920.0
 offset_bottom = 1080.0

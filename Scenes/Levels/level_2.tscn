@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://v4k8cbre5aln"]
+[gd_scene load_steps=9 format=3 uid="uid://v4k8cbre5aln"]
 
 [ext_resource type="Script" path="res://Scripts/Level_Scripts/train_station.gd" id="1_pn73c"]
 [ext_resource type="Texture2D" uid="uid://clhvjv8c2quwi" path="res://Assets/Backdrops/train_canada.png" id="2_tbuqo"]
 [ext_resource type="Texture2D" uid="uid://b7mv65xtljhe" path="res://Assets/Characters/train-attendant.png" id="3_800u2"]
 [ext_resource type="PackedScene" uid="uid://bomie30sx7gp8" path="res://Scenes/character_dialogue.tscn" id="5_3tlxv"]
+[ext_resource type="PackedScene" uid="uid://du3rn8dhpja28" path="res://Scenes/fade.tscn" id="6_rbkum"]
+[ext_resource type="Texture2D" uid="uid://b1gaqwsrto2aw" path="res://Assets/Transitions/train_transition.png" id="7_87erb"]
+[ext_resource type="Texture2D" uid="uid://ed41mh1lqqqt" path="res://Assets/Transitions/train_station.png" id="7_253u3"]
 [ext_resource type="PackedScene" uid="uid://chnteigshnd7x" path="res://Scenes/dialogue_signal_handler.tscn" id="7_c1un2"]
-[ext_resource type="PackedScene" uid="uid://baak44k6wiejb" path="res://Scenes/text_popup.tscn" id="9_1a6y8"]
 
 [node name="TrainStation" type="Node2D"]
 script = ExtResource("1_pn73c")
@@ -19,6 +21,7 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Background" type="TextureRect" parent="Control"]
 layout_mode = 1
@@ -28,6 +31,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_tbuqo")
+metadata/_edit_use_anchors_ = true
 
 [node name="Zac" type="TextureButton" parent="Control"]
 layout_mode = 0
@@ -38,22 +42,44 @@ offset_bottom = 1844.0
 scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("3_800u2")
 stretch_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="CharacterDialogue" parent="Control" instance=ExtResource("5_3tlxv")]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
-offset_left = 480.0
+offset_left = 320.0
 offset_top = -240.0
-offset_right = -480.0
+offset_right = -320.0
 start_id = "Zac"
+options_vertical = true
 
-[node name="TextPopup" parent="Control" instance=ExtResource("9_1a6y8")]
-layout_mode = 0
-offset_left = 136.0
-offset_top = 595.0
-offset_right = 186.0
-offset_bottom = 645.0
+[node name="Transition" parent="Control" instance=ExtResource("6_rbkum")]
+visible = false
+layout_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" parent="Control/Transition" index="0"]
+texture = ExtResource("7_253u3")
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" parent="Control/Transition" index="1"]
+speed_scale = 0.75
+
+[node name="StartFade" parent="Control" instance=ExtResource("6_rbkum")]
+visible = false
+layout_mode = 1
+
+[node name="TextureRect" parent="Control/StartFade" index="0"]
+texture = ExtResource("7_253u3")
+
+[node name="EndFade" parent="Control" instance=ExtResource("6_rbkum")]
+visible = false
+layout_mode = 1
+show_next = true
+
+[node name="TextureRect" parent="Control/EndFade" index="0"]
+texture = ExtResource("7_87erb")
 
 [node name="DialogueSignalHandler" parent="." node_paths=PackedStringArray("dialogue") instance=ExtResource("7_c1un2")]
 dialogue = NodePath("../Control/CharacterDialogue")
@@ -61,3 +87,7 @@ dialogue = NodePath("../Control/CharacterDialogue")
 [connection signal="pressed" from="Control/Zac" to="." method="_on_zac_pressed"]
 [connection signal="pressed" from="Control/Zac" to="Control/Zac" method="_on_pressed"]
 [connection signal="dialogue_signal" from="Control/CharacterDialogue" to="." method="_on_character_dialogue_dialogue_signal"]
+
+[editable path="Control/Transition"]
+[editable path="Control/StartFade"]
+[editable path="Control/EndFade"]

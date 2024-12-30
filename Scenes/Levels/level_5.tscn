@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyr7c07vh37rl"]
+
+[ext_resource type="Texture2D" uid="uid://poe20jebjpx8" path="res://Assets/Backdrops/plane_door.png" id="1_6s10p"]
+[ext_resource type="Script" path="res://Scripts/Level_Scripts/airport.gd" id="1_uxko0"]
+[ext_resource type="Texture2D" uid="uid://dqjkt362n34o0" path="res://Assets/Characters/plane_security.png" id="2_opr2s"]
+[ext_resource type="PackedScene" uid="uid://bomie30sx7gp8" path="res://Scenes/character_dialogue.tscn" id="4_cfnad"]
+[ext_resource type="Resource" uid="uid://yk148wn2onig" path="res://Assets/Dialogue/planestation.tres" id="5_a26i0"]
+
+[node name="Airport" type="Node2D"]
+script = ExtResource("1_uxko0")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_6s10p")
+
+[node name="Pilot" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 824.0
+offset_top = 344.0
+offset_right = 2024.0
+offset_bottom = 1544.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("2_opr2s")
+
+[node name="CharacterDialogue" parent="Control" instance=ExtResource("4_cfnad")]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+offset_left = 320.0
+offset_top = -240.0
+offset_right = -320.0
+data = ExtResource("5_a26i0")
+start_id = "Zac"
+options_vertical = true
+
+[connection signal="pressed" from="Control/Pilot" to="." method="_on_pilot_pressed"]
+[connection signal="dialogue_signal" from="Control/CharacterDialogue" to="." method="_on_character_dialogue_dialogue_signal"]

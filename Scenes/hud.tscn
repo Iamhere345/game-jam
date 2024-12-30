@@ -1,11 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://bpw4dktyc7ivf"]
+[gd_scene load_steps=10 format=3 uid="uid://bpw4dktyc7ivf"]
 
+[ext_resource type="Script" path="res://Scripts/hud.gd" id="1_eddkw"]
 [ext_resource type="Texture2D" uid="uid://bsl3djtg4mwj5" path="res://Assets/UI/watch-regular.png" id="1_pi6vx"]
 [ext_resource type="Texture2D" uid="uid://dj3ch875k4o44" path="res://Assets/UI/watch-gold.png" id="2_4kogv"]
 [ext_resource type="SystemFont" uid="uid://c4ls61egqe81y" path="res://Assets/Misc/times_roman.tres" id="2_j2owk"]
 [ext_resource type="FontFile" uid="uid://ciynkw3camipd" path="res://Assets/Misc/DSEG14Classic-Regular.ttf" id="3_3w6uw"]
 [ext_resource type="Script" path="res://Scripts/time.gd" id="4_djemd"]
 [ext_resource type="Script" path="res://Scripts/cash.gd" id="6_hta1i"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_fo2ir"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d4li0"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -18,6 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_eddkw")
 
 [node name="Watch" type="TextureRect" parent="."]
 layout_mode = 1
@@ -41,6 +45,17 @@ offset_top = -240.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("2_4kogv")
+
+[node name="Mango" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+texture = SubResource("PlaceholderTexture2D_fo2ir")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
